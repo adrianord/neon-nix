@@ -2,7 +2,7 @@
 
 with lib;
 let
-  cfg = config.neon.languages.nix;
+  cfg = config.neon.languages.dotnet;
 in
 {
   options = neon-lib.language.mkOptions "dotnet";
