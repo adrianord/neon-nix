@@ -2,7 +2,7 @@
 
 { host, user, configModule, additionalModules ? [ ], additionalSpecialArgs ? { } }@userConf:
 let
-  neon-lib = import ./lib { lib = nixpkgs.lib; };
+  lib = import ./lib/extend.nix nixpkgs.lib;
   host = {
     "linux" = {
       configurations = "nixosConfigurations";
@@ -23,7 +23,7 @@ in
 {
   configuration = host.system {
     system = userConf.host.arch + "-" + userConf.host.os;
-    specialArgs = { inherit inputs userConf neon-lib; } // additionalSpecialArgs;
+    specialArgs = { inherit inputs userConf lib; } // additionalSpecialArgs;
     modules = host.modules ++ [
       {
         nix.extraOptions = ''

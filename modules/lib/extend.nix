@@ -3,6 +3,6 @@ nixpkgsLib:
 let
   mkLib = import ./.;
 in
-nixpkgsLib.extends (self: super: {
+nixpkgsLib.extend (self: super: {
   neon = mkLib { lib = self; };
 })
