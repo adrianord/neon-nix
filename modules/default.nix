@@ -35,6 +35,8 @@ in
       [
         ./home.nix
         ./languages
+        ./nixpkgs.nix
+        ./programs
       ] ++ additionalModules;
   };
 } 
