@@ -1,11 +1,11 @@
-{ config, lib, neon-lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 let
   cfg = config.neon.languages.nix;
 in
 {
-  options = neon-lib.language.mkOptions "nix";
+  options = lib.neon.language.mkOptions "nix";
 
   config = mkIf cfg.enable {
     home._ = {
@@ -14,7 +14,7 @@ in
         rnix-lsp
         nil
       ];
-      programs.vscode = mkIf cfg.enableVscodeIntegration {
+      programs.vscode = mkIf cfg.vscode.enable {
         extensions = with pkgs; [
           vscode-extensions.bbenoist.nix
           vscode-extensions.jnoortheen.nix-ide

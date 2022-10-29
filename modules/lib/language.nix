@@ -4,20 +4,38 @@ with lib;
   mkOptions = name: {
     neon.languages.${name} = {
       enable = mkEnableOption name;
-      enableVscodeIntegration = mkEnableOption "${name} vscode integration";
-      enableVimIntegration = mkEnableOption "${name} vscode integration";
-      enableZshIntegration = mkEnableOption "${name} zsh integration";
+      neovim = {
+        enable = mkEnableOption "${name} neovim integration";
+      };
+      vscode = {
+        enable = mkEnableOption "${name} vscode integration";
+      };
+      zsh = {
+        enable = mkEnableOption "${name} zsh integration";
+      };
     };
   };
+
   enableLanguages =
-    languages: builtins.foldl' (acc: curr: acc // curr) { }
+    { vscode ? false
+    , neovim ? false
+    , zsh ? false
+    , languages
+    }:
+    builtins.foldl' (acc: curr: acc // curr) { }
       (map
         (x: {
           ${x} = {
             enable = true;
-            enableVscodeIntegration = true;
-            enableVimIntegration = true;
-            enableZshIntegration = true;
+            neovim = {
+              enable = neovim;
+            };
+            vscode = {
+              enable = vscode;
+            };
+            zsh = {
+              enable = zsh;
+            };
           };
         })
         languages);

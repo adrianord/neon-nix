@@ -1,11 +1,11 @@
-{ config, lib, neon-lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 let
   cfg = config.neon.languages.dotnet;
 in
 {
-  options = neon-lib.language.mkOptions "dotnet";
+  options = lib.neon.language.mkOptions "dotnet";
 
   config = mkIf cfg.enable {
     home._ = {
@@ -16,7 +16,7 @@ in
       home.sessionPath = [
         "$HOME/.dotnet/tools"
       ];
-      programs.zsh = mkIf cfg.enableZshIntegration {
+      programs.zsh = mkIf cfg.zsh.enable {
         initExtra = ''
           _dotnet_zsh_complete()
           {
@@ -28,7 +28,7 @@ in
           compdef _dotnet_zsh_complete dotnet
         '';
       };
-      programs.vscode = mkIf cfg.enableVscodeIntegration {
+      programs.vscode = mkIf cfg.vscode.enable {
         extensions = with pkgs.vscode-extensions; [
           ms-dotnettools.csharp
         ];
