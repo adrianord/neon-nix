@@ -33,6 +33,7 @@ in
       configModule
     ] ++
       [
+        ./common
         ./home.nix
         ./languages
         ./nixpkgs.nix
