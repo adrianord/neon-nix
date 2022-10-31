@@ -21,8 +21,8 @@ in
       };
     };
   };
-  
+
   config = {
-    #fonts.fonts = cfg.packages;
+    fonts.fonts = cfg.packages;
   };
 }
