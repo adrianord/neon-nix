@@ -7,6 +7,8 @@
     ./firefox.nix
     ./git.nix
     ./kubernetes.nix
+    ./pulumi.nix
     ./utils.nix
+    ./zsh.nix
   ];
 }
