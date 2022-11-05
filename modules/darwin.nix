@@ -23,6 +23,12 @@ in
 
       homebrew = {
         enable = true;
+        taps = [
+          "homebrew/cask" # Explicitly set so cleanup doesn't try to remove
+        ];
+        onActivation = {
+          cleanup = "uninstall";
+        };
       };
 
       home._ = { config, pkgs, ... }: {
