@@ -36,6 +36,7 @@ in
         ./common
         ./home.nix
         ./languages
+        ./darwin.nix
         ./nixpkgs.nix
         ./programs
       ] ++ additionalModules;

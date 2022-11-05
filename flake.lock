@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1666776005,
-        "narHash": "sha256-HwSMF19PpczfqNHKcFsA6cF4PVbG00uUSdbq6q3jB5o=",
+        "lastModified": 1667419884,
+        "narHash": "sha256-oLNw87ZI5NxTMlNQBv1wG2N27CUzo9admaFlnmavpiY=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "f6648ca0698d1611d7eadfa72b122252b833f86c",
+        "rev": "cfc0125eafadc9569d3d6a16ee928375b77e3100",
         "type": "github"
       },
       "original": {
@@ -26,11 +26,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1666919438,
-        "narHash": "sha256-O/bh3sEew5mn7ebA5MZJc3LS0mGdbJQIaPVuL8K36mA=",
+        "lastModified": 1667610227,
+        "narHash": "sha256-2olA2HYnz07rjDq3lMqCmDRlSegp1WL4OqR3KSy3Hy4=",
         "owner": "bandithedoge",
         "repo": "nixpkgs-firefox-darwin",
-        "rev": "55fb27e49d9de329933f99659286acb9ea07f43a",
+        "rev": "78d9f25b7816f5711f80093721cf6618cda3e1c0",
         "type": "github"
       },
       "original": {
@@ -77,11 +77,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1666903647,
-        "narHash": "sha256-sFI1Gh9DTGzHnBINondupUGYbe+T0wZcpcZjkW0qffM=",
+        "lastModified": 1667574732,
+        "narHash": "sha256-73TVk3uSQOja6Q/5OuNcpcqwo6+SMzJPRtYAjU0rBx4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "213a06295dff96668a1d673b9fd1c03ce1de6745",
+        "rev": "b764068a506c6f70dba998efa0e7fcb99cb4deb2",
         "type": "github"
       },
       "original": {
@@ -108,11 +108,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1667012576,
-        "narHash": "sha256-sDei+3VRNPoG/YWhBhXxUmA9und42fR+OfI/86OorHY=",
+        "lastModified": 1667637002,
+        "narHash": "sha256-6T3warAdGLmF4RL7ruT3dXD2lV3/KGJD6AwvYCwAHo0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4466a2a60a24cd0d95c226d3fb4c667aa63c441d",
+        "rev": "3ddb7c1a19f6aff296785ca6924e0b596b1f6254",
         "type": "github"
       },
       "original": {
@@ -140,11 +140,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1667013160,
-        "narHash": "sha256-D6PNNDzdOCoVLaKwk+K7xlRIRDTpKklsoxh8OAFw4Xk=",
+        "lastModified": 1667636839,
+        "narHash": "sha256-htkPEsgLlSbyhLcsB6cNFwwCYMkBWvQm/qTUpXmPwMI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1f695cdbaa72170739eccc6eed840b48e25e32ec",
+        "rev": "5e115ebc710240978a10e5963e5e6f5114ad8ab1",
         "type": "github"
       },
       "original": {
@@ -170,11 +170,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1667011705,
-        "narHash": "sha256-ohupiBVlXCkdQpvG79akjCILZEb+7DetDVepljR0pNI=",
+        "lastModified": 1667616267,
+        "narHash": "sha256-EYzGCJaTNTSbUk5sa2i4/dn71YtE6uvZb9syL8GH1U0=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "34d76c0a001d81a0fac342698ce7926da37b8ea5",
+        "rev": "a785c5db0ab1b10e6ba04b7240628aea9615e9ad",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "utils": {
       "locked": {
-        "lastModified": 1659877975,
-        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "lastModified": 1667077288,
+        "narHash": "sha256-bdC8sFNDpT0HK74u9fUkpbf1MEzVYJ+ka7NXCdgBoaA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "rev": "6ee9ebb6b1ee695d2cacc4faa053a7b9baa76817",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
         "unstable": "unstable"
       },
       "locked": {
-        "lastModified": 1666944480,
-        "narHash": "sha256-RgkIajqlU3qKzypPbNudx1F4Tr/3pvBHF8P8iTuk6ac=",
+        "lastModified": 1667549397,
+        "narHash": "sha256-Hvm4RJ8IDXc+EjQ0iBeZms3FDTY3cZHibjIDgs9jXIk=",
         "owner": "cideM",
         "repo": "visual-studio-code-insiders-nix",
-        "rev": "897004038d774c608411197ddbc089b4aa68760d",
+        "rev": "8b3061ab2c59449f3f4491f11ff856dff8bada5e",
         "type": "github"
       },
       "original": {
