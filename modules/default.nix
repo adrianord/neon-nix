@@ -1,6 +1,6 @@
 { self, darwin, nixpkgs, home-manager, inputs, ... }:
 
-{ host, user, configModule, additionalModules ? [ ], additionalSpecialArgs ? { } }@userConf:
+{ host, user, modules ? [ ], additionalSpecialArgs ? { } }@userConf:
 let
   lib = import ./lib/extend.nix nixpkgs.lib;
   host = {
@@ -30,7 +30,6 @@ in
           experimental-features = nix-command flakes
         '';
       }
-      configModule
     ] ++
       [
         ./common
@@ -39,6 +38,6 @@ in
         ./darwin.nix
         ./nixpkgs.nix
         ./programs
-      ] ++ additionalModules;
+      ] ++ modules;
   };
 } 
