@@ -11,6 +11,7 @@
 
   modules = [
     ({ lib, ... }: {
+      home._.programs.emacs.enable = true;
       neon = {
         languages = lib.neon.language.enableLanguages
           {
@@ -19,7 +20,7 @@
             neovim = true;
             languages = [
               "dotnet"
-              #"java"
+              "go"
               "nix"
               "nodejs"
               "python"
@@ -44,7 +45,7 @@
           discord.enable = false;
           firefox.enable = true;
           kubernetes.enable = true;
-          neovim = { enable = true; configure = true; };
+          neovim = { enable = true; configure = false; };
           pulumi.enable = true;
           utils.enable = true;
           vscode.enable = true;
