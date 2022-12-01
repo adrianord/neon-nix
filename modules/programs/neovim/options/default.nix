@@ -1,12 +1,14 @@
-{ ... }:
+{ lib, config, ... }:
 
+with lib;
 let
-  config = builtins.readFile ./options.lua;
+  cfg = config.neon.programs.neovim;
+  luaConfig = builtins.readFile ./options.lua;
 in
 {
-  home._.programs.neovim.extraConfig = ''
+  home._.programs.neovim.extraConfig = mkIf cfg.configure ''
     lua << EOF
-    ${config}
+    ${luaConfig}
     EOF
   '';
 }

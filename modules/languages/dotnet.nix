@@ -10,7 +10,7 @@ in
   config = mkIf cfg.enable {
     home._ = {
       home.packages = with pkgs; [
-        dotnet-sdk
+        dotnet-sdk_7
         jetbrains.rider
       ];
       home.sessionPath = [

@@ -3,6 +3,7 @@
 {
   imports = [
     ./dotnet.nix
+    ./java.nix
     ./nix.nix
     ./nodejs.nix
     ./python.nix

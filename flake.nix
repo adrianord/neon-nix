@@ -2,7 +2,7 @@
   description = "Neon Nix";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -16,9 +16,16 @@
     nur.url = "github:nix-community/NUR";
 
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
+
+    nixvim.url = "github:pta2002/nixvim";
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs: {
-    default = import ./modules { inherit self darwin nixpkgs home-manager inputs; };
-  };
+  outputs = inputs:
+    let
+      bootstrap = import ./modules inputs;
+    in
+    {
+      default = bootstrap;
+      darwinConfigurations = import ./systems/darwin { inherit bootstrap; };
+    };
 }

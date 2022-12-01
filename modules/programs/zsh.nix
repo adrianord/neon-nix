@@ -82,13 +82,14 @@ in
           bindkey '^Y' fzf-file-widget
           bindkey "^[[1;5C" forward-word
           bindkey "^[[1;5D" backward-word
+          set +o prompt_cr +o prompt_sp
         '';
       };
       programs.starship = {
         enable = true;
         enableZshIntegration = true;
         settings = {
-          add_newline = false;
+          add_newline = true;
         };
       };
       programs.fzf = {

@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, inputs, ... }:
 
 with lib;
 let
@@ -10,6 +9,7 @@ in
   options = {
     neon.programs.neovim = {
       enable = mkEnableOption "Enable direnv and nix-direnv";
+      configure = mkEnableOption "Configure neovim using neon-nix";
     };
   };
   imports = [
@@ -19,9 +19,10 @@ in
   ];
   config = mkIf cfg.enable (mkMerge [
     ({
-
-
       home._ = {
+        imports = [
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
         home.packages = with pkgs; [
           ripgrep
           lazygit
@@ -30,11 +31,12 @@ in
         home.sessionVariables = {
           EDITOR = "vim";
         };
+        programs.nixvim = {};
         programs.neovim = {
           enable = true;
           viAlias = true;
           vimAlias = true;
-          extraConfig = ''
+          extraConfig = mkIf cfg.configure ''
             lua << EOF
             ${utils}
             EOF

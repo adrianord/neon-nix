@@ -45,6 +45,9 @@ in
 
         userSettings = {
           rust-analyzer = {
+            checkOnSave = {
+              command = "clippy";
+            };
             inlayHints = {
               parameterHints.enable = false;
               typeHints.enable = false;

@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
+with lib;
 let
-  config = builtins.readFile ./appearance.vim;
+  cfg = config.neon.programs.neovim;
+  vimConfig = builtins.readFile ./appearance.vim;
 in
 {
-  home._.programs.neovim = {
+  home._.programs.neovim = mkIf cfg.configure {
     plugins = with pkgs.vimPlugins; [
       catppuccin-nvim
     ];
-    extraConfig = config;
+    extraConfig = vimConfig;
   };
 }

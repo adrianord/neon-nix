@@ -15,7 +15,8 @@ in
     home._.home.packages = with pkgs; [
       nix-diff
       wget
-      sshuttle
+      nixos-generators
+      gnupg
     ];
   };
 }

@@ -1,4 +1,4 @@
-{ self, darwin, nixpkgs, home-manager, inputs, ... }:
+{ self, darwin, nixpkgs, home-manager, nixvim, ... }@inputs:
 
 { host, user, modules ? [ ], additionalSpecialArgs ? { } }@userConf:
 let
@@ -20,24 +20,22 @@ let
     };
   }.${userConf.host.os};
 in
-{
-  configuration = host.system {
-    system = userConf.host.arch + "-" + userConf.host.os;
-    specialArgs = { inherit inputs userConf lib; } // additionalSpecialArgs;
-    modules = host.modules ++ [
-      {
-        nix.extraOptions = ''
-          experimental-features = nix-command flakes
-        '';
-      }
-    ] ++
-      [
-        ./common
-        ./home.nix
-        ./languages
-        ./darwin.nix
-        ./nixpkgs.nix
-        ./programs
-      ] ++ modules;
-  };
+host.system {
+  system = userConf.host.arch + "-" + userConf.host.os;
+  specialArgs = { inherit inputs userConf lib; } // additionalSpecialArgs;
+  modules = host.modules ++ [
+    {
+      nix.extraOptions = ''
+        experimental-features = nix-command flakes
+      '';
+    }
+  ] ++
+    [
+      ./common
+      ./home.nix
+      ./languages
+      ./darwin.nix
+      ./nixpkgs.nix
+      ./programs
+    ] ++ modules;
 } 

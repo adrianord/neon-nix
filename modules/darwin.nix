@@ -32,6 +32,7 @@ in
       };
 
       home._ = { config, pkgs, ... }: {
+        home.sessionPath = mkIf (userConf.host.arch == "aarch64") [ "/opt/homebrew/bin" ];
         home.file."Applications/Home Manager Apps".source =
           let
             apps = pkgs.buildEnv {

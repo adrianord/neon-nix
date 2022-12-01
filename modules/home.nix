@@ -1,4 +1,4 @@
-{ lib, options, userConf, ... }:
+{ lib, options, userConf, inputs, pkgs, ... }:
 
 with lib;
 {
@@ -7,10 +7,11 @@ with lib;
       _ = mkOption {
         type = attrs;
         default = { };
-        description = "For passing arbitrrary configuration to user's home-manager config";
+        description = "For passing arbitrary configuration to user's home-manager config";
       };
     };
   };
+
   config = {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
