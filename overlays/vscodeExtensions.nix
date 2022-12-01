@@ -23,8 +23,8 @@ let
     {
       name = "catppuccin-vsc";
       publisher = "Catppuccin";
-      version = "2.0.0";
-      sha256 = "sha256-RRiPhRImztCWyCu+klDsmvNhF49V9BTVeAnoOJ+i7hY=";
+      version = "2.4.0";
+      sha256 = "sha256-5S6XrdAJwnsy7JO62e4yvcKDJhOjxbnqaQbQuXlrZE0=";
     }
     #PKief.material-icon-theme
     {
@@ -37,8 +37,8 @@ let
     {
       name = "todo-tree";
       publisher = "Gruntfuggly";
-      version = "0.0.215";
-      sha256 = "sha256-WK9J6TvmMCLoqeKWh5FVp1mNAXPWVmRvi/iFuLWMylM=";
+      version = "0.0.220";
+      sha256 = "sha256-U7aY2/ESz9f8foBjydy1G/bWd7CLNyIjDWE3pytZfxo=";
     }
   ];
 
