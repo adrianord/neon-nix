@@ -3,6 +3,8 @@
 with lib;
 let
   cfg = config.neon.languages.go;
+  goPath = "go";
+  goBin = "${goPath}/bin";
 in
 {
   options = lib.neon.language.mkOptions "go";
