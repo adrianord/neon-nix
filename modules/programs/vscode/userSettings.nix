@@ -18,6 +18,7 @@ in
       insertSpaces = true;
       inlineSuggest.enabled = true;
       stickyScroll.enabled = true;
+      rulers = [ 120 ];
     };
     explorer = {
       openEditors.visible = 0;
