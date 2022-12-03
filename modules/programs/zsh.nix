@@ -26,6 +26,9 @@ in
     programs.zsh.enable = true;
 
     home._ = {
+      home.sessionPath = [
+        "$HOME/.local/bin"
+      ];
       home.packages = with pkgs; [
         fd
         bat
