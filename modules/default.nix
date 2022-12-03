@@ -1,4 +1,4 @@
-{ self, darwin, nixpkgs, home-manager, nixvim, ... }@inputs:
+{ self, darwin, nixpkgs, home-manager, ... }@inputs:
 
 { host, user, modules ? [ ], additionalSpecialArgs ? { } }@userConf:
 let

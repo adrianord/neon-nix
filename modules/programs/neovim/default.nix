@@ -20,18 +20,15 @@ in
   config = mkIf cfg.enable (mkMerge [
     ({
       home._ = {
-        imports = [
-          inputs.nixvim.homeManagerModules.nixvim
-        ];
         home.packages = with pkgs; [
           ripgrep
           lazygit
           bottom
+          tree-sitter
         ];
         home.sessionVariables = {
           EDITOR = "vim";
         };
-        programs.nixvim = {};
         programs.neovim = {
           enable = true;
           viAlias = true;

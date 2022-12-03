@@ -16,8 +16,6 @@
     nur.url = "github:nix-community/NUR";
 
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
-
-    nixvim.url = "github:pta2002/nixvim";
   };
 
   outputs = inputs:
