@@ -12,6 +12,7 @@
     ./kubernetes.nix
     ./neovim
     ./pulumi.nix
+    ./terraform.nix
     ./utils.nix
     ./vscode
     ./zsh.nix
