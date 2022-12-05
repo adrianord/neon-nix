@@ -40,6 +40,7 @@
 
         programs = {
           alacritty.enable = true;
+          kitty.enable = true;
           datree.enable = true;
           direnv.enable = true;
           discord.enable = false;

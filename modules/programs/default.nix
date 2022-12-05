@@ -8,6 +8,7 @@
     ./discord.nix
     ./firefox.nix
     ./git.nix
+    ./kitty.nix
     ./kubernetes.nix
     ./neovim
     ./pulumi.nix
