@@ -13,6 +13,8 @@
       PKief.material-icon-theme
       Gruntfuggly.todo-tree
       ms-vscode-remote.remote-ssh
+      christian-kohler.path-intellisense
+      eamodio.gitlens
     ];
     userSettings = {
       workbench = {
