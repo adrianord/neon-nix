@@ -16,6 +16,7 @@ in
     home._ = {
       home.packages = with pkgs; [
         terraform
+        terraformer
       ];
       programs.vscode = mkIf vscodeEnable {
         extensions = with pkgs.vscode-extensions; [
@@ -24,6 +25,4 @@ in
       };
     };
   };
-
-
 }
