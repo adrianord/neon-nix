@@ -19,6 +19,7 @@
             zsh = true;
             neovim = true;
             languages = [
+              "codeql"
               "dotnet"
               "go"
               "nix"
@@ -67,6 +68,7 @@
           "spotify"
           "todoist"
           "warp"
+          "microsoft-remote-desktop"
         ];
       };
     }

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./codeql.nix
     ./dotnet.nix
     ./go.nix
     ./java.nix
