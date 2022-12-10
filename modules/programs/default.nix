@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./aws.nix
     ./datree.nix
     ./direnv.nix
     ./discord.nix
