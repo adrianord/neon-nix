@@ -23,6 +23,11 @@ in
           hashicorp.terraform
         ];
       };
+      programs.zsh = {
+        initExtra = ''
+          complete -o nospace -C terraform terraform
+        '';
+      };
     };
   };
 }
