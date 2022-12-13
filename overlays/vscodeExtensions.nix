@@ -47,8 +47,8 @@ let
   ];
 
   extensionsListOfSet = map (x: { ${x.publisher}.${x.name} = pkgs.vscode-utils.extensionFromVscodeMarketplace x; }) extensionsList;
-  extensionsSet = builtins.foldl' (acc: curr: acc // curr) { } extensionsListOfSet;
+  extensionsSet = builtins.foldl' (acc: curr: self.lib.recursiveUpdate acc curr) { } extensionsListOfSet;
 in
 {
-  vscode-extensions = super.vscode-extensions // extensionsSet;
+  vscode-extensions = self.lib.recursiveUpdate super.vscode-extensions extensionsSet;
 }
