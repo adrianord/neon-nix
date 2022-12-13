@@ -44,6 +44,18 @@ let
       version = "1.7.6";
       sha256 = "sha256-0nD0bWmXHIwKMwOvH57yk8a28heA7HGCtoaeIbHXfg4=";
     }
+    {
+      name = "vscode-test-explorer";
+      publisher = "hbenl";
+      version = "2.21.1";
+      sha256 = "sha256-fHyePd8fYPt7zPHBGiVmd8fRx+IM3/cSBCyiI/C0VAg=";
+    }
+    {
+      name = "test-adapter-converter";
+      publisher = "ms-vscode";
+      version = "0.1.6";
+      sha256 = "sha256-UC8tUe+JJ3r8nb9SsPlvVXw74W75JWjMifk39JClRF4=";
+    }
   ];
 
   extensionsListOfSet = map (x: { ${x.publisher}.${x.name} = pkgs.vscode-utils.extensionFromVscodeMarketplace x; }) extensionsList;
