@@ -17,7 +17,9 @@ in
           nodejs
           jq
           yarn
-        ];
+        ] ++ (with pkgs.nodePackages; [
+          pnpm
+        ]);
 
       programs.vscode = mkIf cfg.vscode.enable {
         extensions = with pkgs.vscode-extensions;[
@@ -35,6 +37,13 @@ in
             proseWrap = "always";
           };
           "[typescript]" = {
+            "editor.defaultFormatter" = "rvest.vs-code-prettier-eslint";
+            "editor.formatOnPaste" = false;
+            "editor.formatOnType" =  false;
+            "editor.formatOnSave" = true;
+            "files.autoSave" = "onFocusChange";
+          };
+          "[typescriptreact]" = {
             "editor.defaultFormatter" = "vscode.typescript-language-features";
           };
         };
