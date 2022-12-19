@@ -22,6 +22,7 @@ in
     };
     explorer = {
       openEditors.visible = 0;
+      confirmDelete =  false;
     };
     workbench = {
       sideBar.location = "right";
