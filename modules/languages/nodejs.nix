@@ -40,7 +40,7 @@ in
           "[typescript]" = {
             "editor.defaultFormatter" = "rvest.vs-code-prettier-eslint";
             "editor.formatOnPaste" = false;
-            "editor.formatOnType" =  false;
+            "editor.formatOnType" = false;
             "editor.formatOnSave" = true;
             "files.autoSave" = "onFocusChange";
           };
