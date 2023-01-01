@@ -29,8 +29,10 @@ in
         };
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
-          vimium-c
           darkreader
+          multi-account-containers
+          ublock-origin
+          vimium-c
         ];
       };
       xdg.mimeApps = mkIf pkgs.stdenv.hostPlatform.isLinux {
