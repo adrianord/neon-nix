@@ -23,8 +23,8 @@ let
     {
       name = "catppuccin-vsc";
       publisher = "Catppuccin";
-      version = "2.4.0";
-      sha256 = "sha256-5S6XrdAJwnsy7JO62e4yvcKDJhOjxbnqaQbQuXlrZE0=";
+      version = "2.5.0";
+      sha256 = "sha256-+dM6MKIjzPdYoRe1DYJ08A+nHHlkTsm+I6CYmnmSRj4=";
     }
     {
       name = "material-icon-theme";
