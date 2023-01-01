@@ -54,6 +54,11 @@ in
               chainingHints.enable = false;
               closingBraceHints.enable = false;
             };
+            cargo = {
+              buildScripts = {
+                enable = true;
+              };
+            };
           };
         };
       };
