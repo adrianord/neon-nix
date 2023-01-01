@@ -27,6 +27,7 @@ in
           dbaeumer.vscode-eslint
           rvest.vs-code-prettier-eslint
           esbenp.prettier-vscode
+          bradlc.vscode-tailwindcss
         ];
         userSettings = {
           eslint = {
