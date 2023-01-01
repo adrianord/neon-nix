@@ -70,6 +70,10 @@
           "todoist"
           "warp"
           "microsoft-remote-desktop"
+          "bloomrpc"
+        ];
+        brews = [
+          "firefoxpwa"
         ];
       };
     }
