@@ -8,6 +8,7 @@
     ./java.nix
     ./nix.nix
     ./nodejs.nix
+    ./protobuf.nix
     ./python.nix
     ./rust.nix
     ./toml.nix

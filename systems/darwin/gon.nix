@@ -24,6 +24,7 @@
               "go"
               "nix"
               "nodejs"
+              "protobuf"
               "python"
               "rust"
               "vale"
