@@ -15,6 +15,7 @@
       ms-vscode-remote.remote-ssh
       christian-kohler.path-intellisense
       eamodio.gitlens
+      editorconfig.editorconfig
       hbenl.vscode-test-explorer
       ms-vscode.test-adapter-converter
     ];
