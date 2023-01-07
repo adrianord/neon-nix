@@ -17,6 +17,8 @@ in
       wget
       nixos-generators
       gnupg
+      unixtools.watch
+      postman
     ];
   };
 }
