@@ -19,6 +19,7 @@ in
       gnupg
       unixtools.watch
       postman
+      viddy
     ];
   };
 }
