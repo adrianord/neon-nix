@@ -19,6 +19,7 @@ in
         kubernetes-helm
         k9s
         kind
+        eksctl
       ];
       programs.zsh.initExtra = ''
         source <(kubectl completion zsh)
