@@ -30,6 +30,7 @@ in
           ms-vscode.vscode-typescript-next
           dbaeumer.vscode-eslint
           bradlc.vscode-tailwindcss
+          prisma.prisma
         ];
         userSettings = {
           eslint = {
