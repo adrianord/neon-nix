@@ -41,6 +41,7 @@
         };
 
         programs = {
+          aws.enable = true;
           alacritty.enable = true;
           kitty.enable = true;
           datree.enable = true;
@@ -54,6 +55,7 @@
           vscode.enable = true;
           zsh.enable = true;
           git.enable = true;
+          terraform.enable = true;
         };
       };
     })
