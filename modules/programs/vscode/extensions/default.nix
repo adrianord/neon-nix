@@ -18,6 +18,7 @@
       editorconfig.editorconfig
       hbenl.vscode-test-explorer
       ms-vscode.test-adapter-converter
+      ms-azuretools.vscode-docker
     ];
     userSettings = {
       workbench = {
