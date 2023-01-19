@@ -4,6 +4,8 @@ with lib;
 let
   cfg = config.neon.languages.nodejs;
   npm_prefix = "$HOME/.npm/node_modules";
+  typescriptFormatter = "vscode.typescript-language-features";
+  jsonFormatter = "vscode.json-language-features";
 in
 {
   options = lib.neon.language.mkOptions "nodejs";
@@ -41,20 +43,20 @@ in
             proseWrap = "always";
           };
           "[typescript]" = {
-            "editor.defaultFormatter" = "rvest.vs-code-prettier-eslint";
+            "editor.defaultFormatter" = typescriptFormatter;
             "editor.formatOnPaste" = false;
             "editor.formatOnType" = false;
             "editor.formatOnSave" = true;
             "files.autoSave" = "onFocusChange";
           };
           "[typescriptreact]" = {
-            "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
+            "editor.defaultFormatter" = typescriptFormatter;
           };
           "[json]" = {
-            "editor.defaultFormatter" = "vscode.json-language-features";
+            "editor.defaultFormatter" = jsonFormatter;
           };
           "[jsonc]" = {
-            "editor.defaultFormatter" = "vscode.json-language-features";
+            "editor.defaultFormatter" = jsonFormatter;
           };
         };
       };
