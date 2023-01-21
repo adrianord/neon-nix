@@ -17,6 +17,7 @@ in
       wget
       nixos-generators
       gnupg
+      tree
       unixtools.watch
       postman
       viddy
