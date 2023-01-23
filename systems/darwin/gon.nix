@@ -73,6 +73,7 @@
           "warp"
           "microsoft-remote-desktop"
           "bloomrpc"
+          "balenaetcher"
         ];
         brews = [
           "firefoxpwa"
