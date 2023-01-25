@@ -2,7 +2,6 @@
 
 with lib;
 let
-  utils = builtins.readFile ./utils.lua;
   cfg = config.neon.programs.neovim;
 in
 {
@@ -13,9 +12,7 @@ in
     };
   };
   imports = [
-    ./options
-    ./appearance
-    ./plugins
+    ./astronvim.nix
   ];
   config = mkIf cfg.enable (mkMerge [
     ({
@@ -33,11 +30,6 @@ in
           enable = true;
           viAlias = true;
           vimAlias = true;
-          extraConfig = mkIf cfg.configure ''
-            lua << EOF
-            ${utils}
-            EOF
-          '';
         };
       };
     })
