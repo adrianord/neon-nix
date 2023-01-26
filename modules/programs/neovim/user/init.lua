@@ -24,14 +24,8 @@ local config = {
 
   plugins = {
     init = {
-        { "catppuccin/nvim" }
-    },
-  },
-
-  lsp = {
-    servers = {
-    },
-    ["server-settings"] = {
+        { "catppuccin/nvim" },
+        { "Shatur/neovim-session-manager" }
     },
   },
 

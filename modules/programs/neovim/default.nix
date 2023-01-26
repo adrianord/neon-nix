@@ -14,6 +14,7 @@ in
   imports = [
     ./astronvim.nix
     ./lsp.nix
+    ./session_manager.nix
   ];
   config = mkIf cfg.enable (mkMerge [
     ({
