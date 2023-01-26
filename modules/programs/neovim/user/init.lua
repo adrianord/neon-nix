@@ -25,7 +25,7 @@ local config = {
   plugins = {
     init = {
       { "catppuccin/nvim" },
-      { "Shatur/neovim-session-manager" }
+      ["Shatur/neovim-session-manager"] = { event = "VimEnter" }
     },
   },
 
