@@ -8,6 +8,12 @@ in
   options = lib.neon.language.mkOptions "nix";
 
   config = mkIf cfg.enable {
+
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "rnix" "nil_ls" ];
+      tsLanguages = [ "nix" ];
+    };
+
     home._ = {
       home.packages = with pkgs; [
         nixpkgs-fmt

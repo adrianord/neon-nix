@@ -28,6 +28,13 @@ local config = {
     },
   },
 
+  lsp = {
+    servers = {
+    },
+    ["server-settings"] = {
+    },
+  },
+
   polish = function()
   end,
 }

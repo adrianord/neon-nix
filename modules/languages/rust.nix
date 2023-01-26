@@ -9,6 +9,11 @@ in
 
   config = mkIf cfg.enable {
 
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "rust_analyzer" ];
+      tsLanguages = [ "rust" ];
+    };
+
     # Implicitly enable TOML
     neon.languages.toml = {
       enable = true;

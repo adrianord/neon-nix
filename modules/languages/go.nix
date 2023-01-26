@@ -10,8 +10,17 @@ in
   options = lib.neon.language.mkOptions "go";
 
   config = mkIf cfg.enable {
+
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "gopls" ];
+      tsLanguages = [ "go" ];
+    };
+
     home._ = {
       home.sessionPath = [ "$HOME/${goBin}" ];
+      home.packages = with pkgs;[
+        gopls
+      ];
       programs = {
         go = {
           enable = true;

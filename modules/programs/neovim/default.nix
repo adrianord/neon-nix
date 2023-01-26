@@ -13,6 +13,7 @@ in
   };
   imports = [
     ./astronvim.nix
+    ./lsp.nix
   ];
   config = mkIf cfg.enable (mkMerge [
     ({

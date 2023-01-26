@@ -8,9 +8,16 @@ in
   options = lib.neon.language.mkOptions "yaml";
 
   config = mkIf cfg.enable {
+
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "yamlls" ];
+      tsLanguages = [ "yaml" ];
+    };
+
     home._ = {
       home.packages = with pkgs; [
         yq-go
+        nodePackages.yaml-language-server
       ];
 
       programs.vscode = mkIf cfg.vscode.enable {

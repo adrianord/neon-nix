@@ -11,6 +11,12 @@ in
   options = lib.neon.language.mkOptions "nodejs";
 
   config = mkIf cfg.enable {
+
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "tsserver" ];
+      tsLanguages = [ "javascript" "typescript" ];
+    };
+
     home._ = {
       home.sessionVariables = {
         NPM_CONFIG_PREFIX = npm_prefix;
@@ -25,6 +31,8 @@ in
           yarn
         ] ++ (with pkgs.nodePackages; [
           pnpm
+          typescript-language-server
+          typescript
         ]);
 
       programs.vscode = mkIf cfg.vscode.enable {

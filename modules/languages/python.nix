@@ -8,8 +8,15 @@ in
   options = lib.neon.language.mkOptions "python";
 
   config = mkIf cfg.enable {
+
+    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+      servers = [ "pyright" ];
+      tsLanguages = [ "python" ];
+    };
+
     home._ = {
       home.packages = with pkgs; [
+        nodePackages.pyright
         (python3.withPackages
           (p: with p; [
             setuptools
