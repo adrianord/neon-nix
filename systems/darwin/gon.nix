@@ -19,15 +19,14 @@
             zsh = true;
             neovim = true;
             languages = [
-              "codeql"
               "dotnet"
               "go"
+              "lua"
               "nix"
               "nodejs"
               "protobuf"
               "python"
               "rust"
-              "vale"
               "yaml"
             ];
           };
