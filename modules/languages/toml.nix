@@ -7,18 +7,23 @@ in
 {
   options = lib.neon.language.mkOptions "toml";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({ })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      tsLanguages = [ "toml" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        tsLanguages = [ "toml" ];
+      };
+    })
 
-    home._ = {
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs; [
           vscode-extensions.bungcip.better-toml
         ];
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

@@ -10,32 +10,37 @@ in
 {
   options = lib.neon.language.mkOptions "nodejs";
 
-  config = mkIf cfg.enable {
-
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "tsserver" ];
-      tsLanguages = [ "javascript" "typescript" ];
-    };
-
-    home._ = {
-      home.sessionVariables = {
-        NPM_CONFIG_PREFIX = npm_prefix;
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.sessionVariables = {
+          NPM_CONFIG_PREFIX = npm_prefix;
+        };
+        home.sessionPath = [
+          "${npm_prefix}/bin"
+        ];
+        home.packages = with pkgs;
+          [
+            nodejs
+            jq
+            yarn
+          ] ++ (with pkgs.nodePackages; [
+            pnpm
+            typescript-language-server
+            typescript
+          ]);
       };
-      home.sessionPath = [
-        "${npm_prefix}/bin"
-      ];
-      home.packages = with pkgs;
-        [
-          nodejs
-          jq
-          yarn
-        ] ++ (with pkgs.nodePackages; [
-          pnpm
-          typescript-language-server
-          typescript
-        ]);
+    })
 
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "tsserver" ];
+        tsLanguages = [ "javascript" "typescript" ];
+      };
+    })
+
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs.vscode-extensions;[
           ms-vscode.vscode-typescript-next
           dbaeumer.vscode-eslint
@@ -68,6 +73,8 @@ in
           };
         };
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

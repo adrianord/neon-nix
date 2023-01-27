@@ -7,20 +7,25 @@ in
 {
   options = lib.neon.language.mkOptions "nix";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.packages = with pkgs; [
+          nixpkgs-fmt
+          nil
+        ];
+      };
+    })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "rnix" "nil_ls" ];
-      tsLanguages = [ "nix" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "nil_ls" ];
+        tsLanguages = [ "nix" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        nixpkgs-fmt
-        rnix-lsp
-        nil
-      ];
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs; [
           vscode-extensions.bbenoist.nix
           vscode-extensions.jnoortheen.nix-ide
@@ -30,6 +35,8 @@ in
           serverPath = "nil";
         };
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

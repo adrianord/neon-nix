@@ -7,23 +7,31 @@ in
 {
   options = lib.neon.language.mkOptions "lua";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.packages = with pkgs; [
+          sumneko-lua-language-server
+        ];
+      };
+    })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "sumneko_lua" ];
-      tsLanguages = [ "lua" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "sumneko_lua" ];
+        tsLanguages = [ "lua" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        sumneko-lua-language-server
-      ];
-
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs.vscode-extensions; [
           sumneko.lua
         ];
       };
-    };
-  };
+    })
+
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

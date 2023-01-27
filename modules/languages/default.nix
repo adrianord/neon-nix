@@ -2,10 +2,8 @@
 
 {
   imports = [
-    ./codeql.nix
     ./dotnet.nix
     ./go.nix
-    ./java.nix
     ./lua.nix
     ./nix.nix
     ./nodejs.nix
@@ -14,7 +12,6 @@
     ./rust.nix
     ./terraform.nix
     ./toml.nix
-    ./vale.nix
     ./yaml.nix
   ];
 } 

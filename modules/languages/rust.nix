@@ -7,42 +7,47 @@ in
 {
   options = lib.neon.language.mkOptions "rust";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      # Implicitly enable TOML
+      neon.languages.toml = {
+        enable = true;
+        vscode.enable = cfg.vscode.enable;
+        neovim.enable = cfg.neovim.enable;
+        zsh.enable = cfg.zsh.enable;
+      };
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "rust_analyzer" ];
-      tsLanguages = [ "rust" ];
-    };
+      home._ = {
+        home.packages = with pkgs; [
+          rust-analyzer
+          trunk
+          cargo-edit
+          cargo-watch
+          bacon
+          wasm-pack
+          wasm-bindgen-cli
+          (rust-bin.stable.latest.default.override {
+            extensions = [ "rust-src" ];
+            targets = [
+              "aarch64-apple-darwin"
+              "wasm32-unknown-unknown"
+              "x86_64-apple-darwin"
+              "x86_64-unknown-linux-gnu"
+            ];
+          })
+        ];
+      };
+    })
 
-    # Implicitly enable TOML
-    neon.languages.toml = {
-      enable = true;
-      vscode.enable = cfg.vscode.enable;
-      neovim.enable = cfg.neovim.enable;
-      zsh.enable = cfg.zsh.enable;
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "rust_analyzer" ];
+        tsLanguages = [ "rust" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        rust-analyzer
-        trunk
-        cargo-edit
-        cargo-watch
-        bacon
-        wasm-pack
-        wasm-bindgen-cli
-        (rust-bin.stable.latest.default.override {
-          extensions = [ "rust-src" ];
-          targets = [
-            "aarch64-apple-darwin"
-            "wasm32-unknown-unknown"
-            "x86_64-apple-darwin"
-            "x86_64-unknown-linux-gnu"
-          ];
-        })
-      ];
-
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs.vscode-extensions; [
           rust-lang.rust-analyzer
           serayuzgur.crates
@@ -67,6 +72,8 @@ in
           };
         };
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

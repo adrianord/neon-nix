@@ -7,22 +7,29 @@ in
 {
   options = lib.neon.language.mkOptions "python";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.packages = with pkgs; [
+          nodePackages.pyright
+          (python3.withPackages
+            (p: with p; [
+              setuptools
+              pip
+            ]))
+        ];
+      };
+    })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "pyright" ];
-      tsLanguages = [ "python" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "pyright" ];
+        tsLanguages = [ "python" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        nodePackages.pyright
-        (python3.withPackages
-          (p: with p; [
-            setuptools
-            pip
-          ]))
-      ];
-    };
-  };
+    (mkIf cfg.vscode.enable { })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

@@ -7,26 +7,33 @@ in
 {
   options = lib.neon.language.mkOptions "protobuf";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.packages = with pkgs; [
+          protobuf
+          grpcurl
+          buf
+          buf-language-server
+        ];
+      };
+    })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "bufls" ];
-      tsLanguages = [ "proto" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "bufls" ];
+        tsLanguages = [ "proto" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        protobuf
-        grpcurl
-        buf
-        buf-language-server
-      ];
-
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._.programs.vscode = {
         extensions = with pkgs.vscode-extensions; [
           zxh404.vscode-proto3
         ];
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

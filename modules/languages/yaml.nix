@@ -7,20 +7,25 @@ in
 {
   options = lib.neon.language.mkOptions "yaml";
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      home._ = {
+        home.packages = with pkgs; [
+          yq-go
+          nodePackages.yaml-language-server
+        ];
+      };
+    })
 
-    neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-      servers = [ "yamlls" ];
-      tsLanguages = [ "yaml" ];
-    };
+    (mkIf cfg.neovim.enable {
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
+        servers = [ "yamlls" ];
+        tsLanguages = [ "yaml" ];
+      };
+    })
 
-    home._ = {
-      home.packages = with pkgs; [
-        yq-go
-        nodePackages.yaml-language-server
-      ];
-
-      programs.vscode = mkIf cfg.vscode.enable {
+    (mkIf cfg.vscode.enable {
+      home._. programs.vscode = {
         extensions = with pkgs.vscode-extensions; [
           redhat.vscode-yaml
         ];
@@ -29,6 +34,8 @@ in
           "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
         };
       };
-    };
-  };
+    })
+
+    (mkIf cfg.zsh.enable { })
+  ]);
 }

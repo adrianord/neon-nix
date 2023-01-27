@@ -14,11 +14,6 @@ in
           terraform
           terraform-ls
         ];
-        programs.zsh = {
-          initExtra = ''
-            complete -o nospace -C terraform terraform
-          '';
-        };
       };
     })
 
@@ -34,6 +29,14 @@ in
         extensions = with pkgs.vscode-extensions; [
           hashicorp.terraform
         ];
+      };
+    })
+
+    (mkIf cfg.zsh.enable {
+      home._.programs.zsh = {
+        initExtra = ''
+          complete -o nospace -C terraform terraform
+        '';
       };
     })
   ]);
