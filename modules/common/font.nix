@@ -19,10 +19,24 @@ in
         type = str;
         default = "JetBrainsMono Nerd Font";
       };
+      casks = mkOption {
+        description = "Font casks to install if host platform is darwin";
+        type = listOf str;
+        default = [ "font-jetbrains-mono-nerd-font" ];
+      };
     };
   };
 
-  config = {
-    fonts.fonts = cfg.packages;
-  };
+  config = mkMerge [
+    ({
+      fonts.fonts = cfg.packages;
+    })
+
+    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      homebrew = {
+        taps = [ "homebrew/cask-fonts" ];
+        casks = cfg.casks;
+      };
+    })
+  ];
 }

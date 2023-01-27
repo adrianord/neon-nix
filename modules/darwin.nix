@@ -48,6 +48,7 @@ in
         home = "/Users/${userConf.user.name}";
       };
     })
+
     (mkIf cfg.utils.enable {
       homebrew.casks = [
         "raycast"
@@ -55,13 +56,16 @@ in
         "alt-tab"
         "rectangle"
         "unnaturalscrollwheels"
+        "topnotch"
       ];
     })
+
     (mkIf cfg.utils.includeUnfree {
       homebrew.casks = [
         "multitouch"
       ];
     })
+
     (mkIf cfg.configure {
       system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
       system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;

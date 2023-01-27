@@ -21,6 +21,14 @@ in
       };
     })
 
+    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      homebrew = {
+        casks = [
+          "jetbrains-toolbox"
+        ];
+      };
+    })
+
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = {
         servers = [ "omnisharp" ];

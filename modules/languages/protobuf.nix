@@ -19,6 +19,14 @@ in
       };
     })
 
+    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      homebrew = {
+        casks = [
+          "bloomrpc"
+        ];
+      };
+    })
+
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
         servers = [ "bufls" ];

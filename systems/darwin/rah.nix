@@ -29,7 +29,6 @@
           utils = {
             enable = true;
             includeUnfree = true;
-
           };
           configure = true;
         };
@@ -43,7 +42,7 @@
           discord.enable = false;
           firefox.enable = true;
           kubernetes.enable = true;
-          neovim = { enable = true; configure = false; };
+          neovim.enable = true;
           pulumi.enable = true;
           utils.enable = true;
           vscode.enable = true;
@@ -54,22 +53,13 @@
     })
     {
       homebrew = {
-        taps = [
-          "homebrew/cask-fonts"
-        ];
         casks = [
           "discord"
-          "font-jetbrains-mono-nerd-font"
           "obsidian"
           "spotify"
           "microsoft-remote-desktop"
-          "bloomrpc"
           "balenaetcher"
-          "topnotch"
           "bitwarden"
-        ];
-        brews = [
-          "firefoxpwa"
         ];
       };
     }
