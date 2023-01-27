@@ -44,6 +44,7 @@ in
           cursor_blink_interval = 0;
           tab_bar_edge = "top";
           tab_bar_style = "slant";
+          disable_ligatures = "always";
         };
       };
     };
