@@ -27,6 +27,7 @@
               "protobuf"
               "python"
               "rust"
+              "terraform"
               "yaml"
             ];
           };
@@ -54,7 +55,6 @@
           vscode.enable = true;
           zsh.enable = true;
           git.enable = true;
-          terraform.enable = true;
         };
       };
     })

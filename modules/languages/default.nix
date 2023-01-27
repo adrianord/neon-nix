@@ -12,6 +12,7 @@
     ./protobuf.nix
     ./python.nix
     ./rust.nix
+    ./terraform.nix
     ./toml.nix
     ./vale.nix
     ./yaml.nix
