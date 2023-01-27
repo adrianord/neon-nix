@@ -8,6 +8,8 @@ let
 
   quotedTs = builtins.map (x: "\"${x}\"") cfg.lsp.tsLanguages;
   concattedTs = builtins.concatStringsSep ", " quotedTs;
+
+  serverSettingsOpts = with types; { };
 in
 {
   options = {
@@ -15,12 +17,17 @@ in
       servers = mkOption {
         description = "List of servers to enable that are no managed by mason";
         type = listOf str;
-        default = [];
+        default = [ ];
       };
       tsLanguages = mkOption {
         description = "List of treesitter languages to ensure";
         type = listOf str;
-        default = [];
+        default = [ ];
+      };
+      serverSettings = mkOption {
+        description = "Server settings for LSP";
+        type = attrsOf attrs;
+        default = { };
       };
     };
   };
@@ -41,6 +48,15 @@ in
         '';
         target = "nvim/lua/user/plugins/treesitter.lua";
       };
-    };
+    } // concatMapAttrs
+      (name: value: {
+        "astroNvimUser${name}ServerSettings" = {
+          text = ''
+            return ${lib.neon.toLuaObject value}; 
+          '';
+          target = "nvim/lua/user/lsp/server-settings/${name}.lua";
+        };
+      })
+      cfg.lsp.serverSettings;
   };
 }

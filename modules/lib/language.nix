@@ -1,7 +1,7 @@
 { lib }:
 with lib;
 {
-  mkOptions = config: name: {
+  mkLanguageOptions = config: name: {
     neon.languages.${name} = {
       enable = mkEnableOption name;
       neovim = {

@@ -13,7 +13,7 @@
     ({ lib, ... }: {
       home._.programs.emacs.enable = true;
       neon = {
-        languages = lib.neon.language.enableLanguages [
+        languages = lib.neon.enableLanguages [
           "dotnet"
           "go"
           "lua"

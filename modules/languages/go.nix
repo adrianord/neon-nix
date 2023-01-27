@@ -7,7 +7,7 @@ let
   goBin = "${goPath}/bin";
 in
 {
-  options = lib.neon.language.mkOptions config "go";
+  options = lib.neon.mkLanguageOptions config "go";
 
   config = mkIf cfg.enable (mkMerge [
     ({

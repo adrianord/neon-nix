@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.dotnet;
 in
 {
-  options = lib.neon.language.mkOptions config "dotnet";
+  options = lib.neon.mkLanguageOptions config "dotnet";
 
   config = mkIf cfg.enable (mkMerge [
     ({

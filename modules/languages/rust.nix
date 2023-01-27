@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.rust;
 in
 {
-  options = lib.neon.language.mkOptions config "rust";
+  options = lib.neon.mkLanguageOptions config "rust";
 
   config = mkIf cfg.enable (mkMerge [
     ({

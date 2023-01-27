@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.yaml;
 in
 {
-  options = lib.neon.language.mkOptions config "yaml";
+  options = lib.neon.mkLanguageOptions config "yaml";
 
   config = mkIf cfg.enable (mkMerge [
     ({

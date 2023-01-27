@@ -8,7 +8,7 @@ let
   jsonFormatter = "vscode.json-language-features";
 in
 {
-  options = lib.neon.language.mkOptions config "nodejs";
+  options = lib.neon.mkLanguageOptions config "nodejs";
 
   config = mkIf cfg.enable (mkMerge [
     ({

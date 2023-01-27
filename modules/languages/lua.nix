@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.lua;
 in
 {
-  options = lib.neon.language.mkOptions config "lua";
+  options = lib.neon.mkLanguageOptions config "lua";
 
   config = mkIf cfg.enable (mkMerge [
     ({
