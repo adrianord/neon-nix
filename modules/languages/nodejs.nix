@@ -28,13 +28,14 @@ in
             pnpm
             typescript-language-server
             typescript
+            vscode-langservers-extracted
           ]);
       };
     })
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "tsserver" ];
+        servers = [ "tsserver" "eslint" ];
         tsLanguages = [ "javascript" "typescript" ];
       };
     })
