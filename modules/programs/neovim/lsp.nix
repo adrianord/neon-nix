@@ -15,10 +15,12 @@ in
       servers = mkOption {
         description = "List of servers to enable that are no managed by mason";
         type = listOf str;
+        default = [];
       };
       tsLanguages = mkOption {
         description = "List of treesitter languages to ensure";
         type = listOf str;
+        default = [];
       };
     };
   };

@@ -13,24 +13,18 @@
     ({ lib, ... }: {
       home._.programs.emacs.enable = true;
       neon = {
-        languages = lib.neon.language.enableLanguages
-          {
-            vscode = true;
-            zsh = true;
-            neovim = true;
-            languages = [
-              "dotnet"
-              "go"
-              "lua"
-              "nix"
-              "nodejs"
-              "protobuf"
-              "python"
-              "rust"
-              "terraform"
-              "yaml"
-            ];
-          };
+        languages = lib.neon.language.enableLanguages [
+          "dotnet"
+          "go"
+          "lua"
+          "nix"
+          "nodejs"
+          "protobuf"
+          "python"
+          "rust"
+          "terraform"
+          "yaml"
+        ];
         darwin = {
           utils = {
             enable = true;

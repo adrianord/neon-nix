@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.toml;
 in
 {
-  options = lib.neon.language.mkOptions "toml";
+  options = lib.neon.language.mkOptions config "toml";
 
   config = mkIf cfg.enable (mkMerge [
     ({ })

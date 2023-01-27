@@ -1,42 +1,32 @@
 { lib }:
 with lib;
 {
-  mkOptions = name: {
+  mkOptions = config: name: {
     neon.languages.${name} = {
       enable = mkEnableOption name;
       neovim = {
-        enable = mkEnableOption "${name} neovim integration";
+        enable = mkEnableOption "${name} neovim integration" // {
+          default = config.neon.programs.neovim.enable;
+        };
       };
       vscode = {
-        enable = mkEnableOption "${name} vscode integration";
+        enable = mkEnableOption "${name} vscode integration" // {
+          default = config.neon.programs.vscode.enable;
+        };
       };
       zsh = {
-        enable = mkEnableOption "${name} zsh integration";
+        enable = mkEnableOption "${name} zsh integration" // {
+          default = config.neon.programs.zsh.enable;
+        };
       };
     };
   };
 
-  enableLanguages =
-    { vscode ? false
-    , neovim ? false
-    , zsh ? false
-    , languages
-    }:
+  enableLanguages = languages:
     builtins.foldl' (acc: curr: acc // curr) { }
       (map
         (x: {
-          ${x} = {
-            enable = true;
-            neovim = {
-              enable = neovim;
-            };
-            vscode = {
-              enable = vscode;
-            };
-            zsh = {
-              enable = zsh;
-            };
-          };
+          ${x}.enable = true;
         })
         languages);
 }

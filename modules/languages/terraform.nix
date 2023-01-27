@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.terraform;
 in
 {
-  options = lib.neon.language.mkOptions "terraform";
+  options = lib.neon.language.mkOptions config "terraform";
 
   config = mkIf cfg.enable (mkMerge [
     ({

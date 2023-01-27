@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.python;
 in
 {
-  options = lib.neon.language.mkOptions "python";
+  options = lib.neon.language.mkOptions config "python";
 
   config = mkIf cfg.enable (mkMerge [
     ({

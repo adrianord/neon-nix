@@ -5,7 +5,7 @@ let
   cfg = config.neon.languages.protobuf;
 in
 {
-  options = lib.neon.language.mkOptions "protobuf";
+  options = lib.neon.language.mkOptions config "protobuf";
 
   config = mkIf cfg.enable (mkMerge [
     ({
