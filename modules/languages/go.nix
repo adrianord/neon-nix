@@ -15,6 +15,7 @@ in
         home.sessionPath = [ "$HOME/${goBin}" ];
         home.packages = with pkgs;[
           gopls
+          goreleaser
         ];
         programs = {
           go = {
