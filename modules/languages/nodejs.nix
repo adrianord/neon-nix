@@ -12,6 +12,15 @@ in
 
   config = mkIf cfg.enable (mkMerge [
     ({
+      # Implicitly enable JSON
+      neon.languages.json = {
+        enable = true;
+        vscode.enable = cfg.vscode.enable;
+        neovim.enable = cfg.neovim.enable;
+        zsh.enable = cfg.zsh.enable;
+      };
+
+
       home._ = {
         home.sessionVariables = {
           NPM_CONFIG_PREFIX = npm_prefix;

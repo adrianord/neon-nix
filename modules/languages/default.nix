@@ -4,6 +4,7 @@
   imports = [
     ./dotnet.nix
     ./go.nix
+    ./json.nix
     ./lua.nix
     ./nix.nix
     ./nodejs.nix
