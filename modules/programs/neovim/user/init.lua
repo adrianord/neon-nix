@@ -8,6 +8,7 @@ local config = {
       spell = false,
       signcolumn = "auto",
       wrap = false,
+      autoindent = true,
     },
     g = {
       mapleader = " ",
@@ -25,6 +26,7 @@ local config = {
   plugins = {
     init = {
       { "catppuccin/nvim" },
+      { "gpanders/editorconfig.nvim" },
       ["Shatur/neovim-session-manager"] = { event = "VimEnter" }
     },
   },
