@@ -6,6 +6,7 @@
     ./go.nix
     ./json.nix
     ./lua.nix
+    ./markdown.nix
     ./nix.nix
     ./nodejs.nix
     ./protobuf.nix
