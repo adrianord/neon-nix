@@ -1,4 +1,6 @@
-local config = {
+local toggleTerm = { "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" };
+local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" };
+return {
   colorscheme = "catppuccin",
 
   options = {
@@ -20,6 +22,24 @@ local config = {
       icons_enabled = true,
       ui_notifications_enabled = true,
       heirline_bufferline = false,
+    },
+  },
+
+  mappings = {
+    n = {
+      ["<leader>th"] = toggleTerm,
+      ["<M-C-1>"] = toggleTerm,
+      ["<D-C-1>"] = toggleTerm,
+      ["<M-CR>"] = lspCodeAction,
+      ["<D-CR>"] = lspCodeAction,
+    },
+    i = {
+      ["<M-C-1>"] = toggleTerm,
+      ["<D-C-1>"] = toggleTerm,
+    },
+    t = {
+      ["<M-C-1>"] = toggleTerm,
+      ["<D-C-1>"] = toggleTerm,
     },
   },
 
@@ -52,5 +72,3 @@ local config = {
     end
   end,
 }
-
-return config
