@@ -55,22 +55,22 @@ in
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
       home._.programs.kitty = {
         # Helpful video https://www.youtube.com/watch?v=lHBD6pdJ-Ng
-        keybindings =
-          {
-            "cmd+n" = "new_os_window";
-            "cmd+c" = "copy_to_clipboard";
-            "cmd+v" = "paste_from_clipboard";
-            "cmd+enter" = "send_text all \\x1b\\r"; # Emulate Alt+Enter
-          } // mkMerge (genList
-            (x:
-              let
-                code = toString (x + 48);
-                num = toString x;
-              in
-              {
-                "cmd+ctrl+${num}" = "send_text all \\x1b[${code};7u"; # Emulate Alt+Ctrl+x
-                "cmd+${num}" = "send_text all \\x1b[${code};3u"; # Emulate Alt+x
-              }) 10);
+        keybindings = mkMerge ((genList
+          (x:
+            let
+              code = toString (x + 48);
+              num = toString x;
+            in
+            {
+              "cmd+ctrl+${num}" = "send_text all \\x1b[${code};7u"; # Emulate Alt+Ctrl+x
+              "cmd+${num}" = "send_text all \\x1b[${code};3u"; # Emulate Alt+x
+            }) 10) ++
+        [{
+          "cmd+n" = "new_os_window";
+          "cmd+c" = "copy_to_clipboard";
+          "cmd+v" = "paste_from_clipboard";
+          "cmd+enter" = "send_text all \\x1b\\r"; # Emulate Alt+Enter
+        }]);
       };
     })
   ]);
