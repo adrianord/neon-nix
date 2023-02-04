@@ -32,6 +32,7 @@ return {
       ["<D-C-1>"] = toggleTerm,
       ["<M-CR>"] = lspCodeAction,
       ["<D-CR>"] = lspCodeAction,
+      ["<leader>q"] = { "<cmd>qa<cr>", desc = "Quit" }
     },
     i = {
       ["<M-C-1>"] = toggleTerm,
