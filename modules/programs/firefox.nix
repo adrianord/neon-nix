@@ -27,14 +27,14 @@ in
               "browser.fullscreen.autohide" = false;
               "browser.ctrlTab.sortByRecentlyUsed" = true;
             };
+            extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+              bitwarden
+              darkreader
+              multi-account-containers
+              ublock-origin
+              vimium-c
+            ];
           };
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            bitwarden
-            darkreader
-            multi-account-containers
-            ublock-origin
-            vimium-c
-          ];
         };
         xdg.mimeApps = mkIf pkgs.stdenv.hostPlatform.isLinux {
           defaultApplications = {
