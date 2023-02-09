@@ -11,11 +11,21 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    home._ = {
-      home.packages = with pkgs; [
-        discord-ptb
-      ];
-    };
-  };
+  config = mkIf cfg.enable (mkMerge [
+    (mkIf pkgs.stdenv.hostPlatform.isLinux {
+      home._ = {
+        home.packages = with pkgs; [
+          discord-ptb
+        ];
+      };
+    })
+
+    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      homebrew = {
+        casks = [
+          "discord"
+        ];
+      };
+    })
+  ]);
 }

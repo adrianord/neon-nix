@@ -39,7 +39,7 @@
           kitty.enable = true;
           datree.enable = true;
           direnv.enable = true;
-          discord.enable = false;
+          discord.enable = true;
           firefox.enable = true;
           kubernetes.enable = true;
           neovim.enable = true;
@@ -54,7 +54,6 @@
     {
       homebrew = {
         casks = [
-          "discord"
           "obsidian"
           "spotify"
           "microsoft-remote-desktop"
