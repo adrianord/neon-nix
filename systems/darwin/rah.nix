@@ -19,6 +19,7 @@
           "lua"
           "nix"
           "nodejs"
+          "markdown"
           "protobuf"
           "python"
           "rust"
@@ -51,14 +52,17 @@
         };
       };
     })
+
     {
       homebrew = {
         casks = [
+          "zoom"
           "obsidian"
           "spotify"
           "microsoft-remote-desktop"
           "balenaetcher"
           "bitwarden"
+          "nordvpn"
         ];
       };
     }
