@@ -12,6 +12,7 @@ in
       home._ = {
         home.packages = with pkgs; [
           yq-go
+          yamllint
           nodePackages.yaml-language-server
         ];
       };
