@@ -7,6 +7,7 @@
     ./datree.nix
     ./direnv.nix
     ./discord.nix
+    ./edge.nix
     ./firefox.nix
     ./git.nix
     ./kitty.nix
