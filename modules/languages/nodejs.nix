@@ -34,6 +34,7 @@ in
             jq
             yarn
           ] ++ (with pkgs.nodePackages; [
+            js-beautify
             pnpm
             typescript-language-server
             typescript
