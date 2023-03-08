@@ -56,10 +56,10 @@ in
           size = 999999999;
         };
         shellAliases = {
-          ls = "ls --color=auto";
-          la = "ls -lAh";
-          cdcode = "cd ~/Code";
-          g = "git";
+          ls = mkDefault "command ls --color=auto";
+          la = mkDefault "command ls --color=auto -lAh";
+          cdcode = mkDefault "cd ~/Code";
+          g = mkDefault "git";
         };
         completionInit = ''
           autoload -Uz compinit

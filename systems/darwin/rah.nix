@@ -50,6 +50,9 @@
           vscode.enable = true;
           zsh.enable = true;
           git.enable = true;
+
+          coreutilsRs.enable = true;
+          coreutilsRs.zshIntegration = true;
         };
       };
     })

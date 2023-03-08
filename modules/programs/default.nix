@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./aws.nix
+    ./coreutilsRs.nix
     ./datree.nix
     ./direnv.nix
     ./discord.nix
