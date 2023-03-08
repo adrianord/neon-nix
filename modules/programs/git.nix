@@ -54,6 +54,7 @@ in
       home.packages = with pkgs; [
         gh
         act
+        gitoxide
       ];
       programs.git = {
         enable = true;
