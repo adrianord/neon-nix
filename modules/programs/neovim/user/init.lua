@@ -27,51 +27,52 @@ return {
     },
     mappings = {
         n = {
-            ["<leader>th"] = toggleTerm,
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
-            ["<M-1>"] = toggleExplorer,
-            ["<D-1>"] = toggleExplorer,
-            ["<M-CR>"] = lspCodeAction,
-            ["<D-CR>"] = lspCodeAction,
-            ["<leader>q"] = { "<cmd>qa<cr>", desc = "Quit" }
+                ["<leader>th"] = toggleTerm,
+                ["<M-C-1>"] = toggleTerm,
+                ["<D-C-1>"] = toggleTerm,
+                ["<M-1>"] = toggleExplorer,
+                ["<D-1>"] = toggleExplorer,
+                ["<M-CR>"] = lspCodeAction,
+                ["<D-CR>"] = lspCodeAction,
+                ["<leader>q"] = { "<cmd>qa<cr>", desc = "Quit" }
         },
         i = {
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
+                ["<M-C-1>"] = toggleTerm,
+                ["<D-C-1>"] = toggleTerm,
         },
         t = {
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
-            ["<S-ESC>"] = toggleTerm,
-            ["<C-l>"] = false,
+                ["<M-C-1>"] = toggleTerm,
+                ["<D-C-1>"] = toggleTerm,
+                ["<S-ESC>"] = toggleTerm,
+                ["<C-l>"] = false,
         },
     },
     plugins = {
         init = {
             { "catppuccin/nvim" },
             { "gpanders/editorconfig.nvim" },
-            ["Shatur/neovim-session-manager"] = { event = "VimEnter" }
+            { "github/copilot.vim" },
+                ["Shatur/neovim-session-manager"] = { event = "VimEnter" }
         },
     },
     polish = function()
-      local function alpha_on_bye(cmd)
-        local bufs = vim.fn.getbufinfo { buflisted = true }
-        vim.cmd(cmd)
-        if require("core.utils").is_available "alpha-nvim" and not bufs[2] then
-          require("alpha").start(true)
+        local function alpha_on_bye(cmd)
+            local bufs = vim.fn.getbufinfo { buflisted = true }
+            vim.cmd(cmd)
+            if require("core.utils").is_available "alpha-nvim" and not bufs[2] then
+                require("alpha").start(true)
+            end
         end
-      end
 
-      vim.keymap.del("n", "<leader>c")
-      if require("core.utils").is_available "bufdelete.nvim" then
-        vim.keymap.set("n", "<leader>c", function()
-          alpha_on_bye "Bdelete!"
-        end, { desc = "Close buffer" })
-      else
-        vim.keymap.set("n", "<leader>c", function()
-          alpha_on_bye "bdelete!"
-        end, { desc = "Close buffer" })
-      end
+        vim.keymap.del("n", "<leader>c")
+        if require("core.utils").is_available "bufdelete.nvim" then
+            vim.keymap.set("n", "<leader>c", function()
+                alpha_on_bye "Bdelete!"
+            end, { desc = "Close buffer" })
+        else
+            vim.keymap.set("n", "<leader>c", function()
+                alpha_on_bye "bdelete!"
+            end, { desc = "Close buffer" })
+        end
     end,
 }
