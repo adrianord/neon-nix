@@ -13,14 +13,15 @@ in
 
   config = mkIf cfg.enable {
     home._.home.packages = with pkgs; [
-      nix-diff
-      wget
-      nixos-generators
       gnupg
+      nix-diff
+      nixos-generators
+      nmap
+      postman
       tree
       unixtools.watch
-      postman
       viddy
+      wget
     ];
   };
 }
