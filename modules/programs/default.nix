@@ -10,6 +10,7 @@
     ./discord.nix
     ./edge.nix
     ./firefox.nix
+    ./gcloud.nix
     ./git.nix
     ./kitty.nix
     ./kubernetes.nix
