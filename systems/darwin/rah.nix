@@ -50,9 +50,9 @@
           vscode.enable = true;
           zsh.enable = true;
           git.enable = true;
-
           coreutilsRs.enable = true;
           coreutilsRs.zshIntegration = true;
+          gcloud.enable = true;
         };
       };
     })
@@ -67,6 +67,9 @@
           "balenaetcher"
           "bitwarden"
           "nordvpn"
+          "vmware-fusion"
+          "raspberry-pi-imager"
+          "keepassxc"
         ];
       };
     }
