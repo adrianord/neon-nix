@@ -19,6 +19,7 @@
       hbenl.vscode-test-explorer
       ms-vscode.test-adapter-converter
       ms-azuretools.vscode-docker
+      github.copilot
     ];
     userSettings = {
       workbench = {
