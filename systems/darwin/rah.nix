@@ -70,6 +70,7 @@
           "vmware-fusion"
           "raspberry-pi-imager"
           "keepassxc"
+          "unetbootin"
         ];
       };
     }
