@@ -1,6 +1,6 @@
 local toggleTerm = { "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" };
 local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" };
-local toggleExplorer = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" };
+local toggleExplorer = { "<cmd>Neotree focus<cr>", desc = "Toggle Explorer" };
 
 return {
     colorscheme = "catppuccin",

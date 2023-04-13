@@ -11,4 +11,11 @@ return {
       },
     },
   },
+  mapping_options = {
+    noremap = false,
+  },
+  mappings = {
+        ["<M-1>"] = "close_window",
+        ["<D-1>"] = "close_window",
+  },
 }
