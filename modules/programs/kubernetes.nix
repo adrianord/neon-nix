@@ -20,11 +20,14 @@ in
         k9s
         kind
         eksctl
+        krew
       ];
       programs.zsh.initExtra = ''
         source <(kubectl completion zsh)
         source <(helm completion zsh)
       '';
+      home.sessionPath = [ "$HOME/.krew/bin" ];
+
     };
   };
 }
