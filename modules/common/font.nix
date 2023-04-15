@@ -24,6 +24,11 @@ in
         type = listOf str;
         default = [ "font-jetbrains-mono-nerd-font" ];
       };
+      size = mkOption {
+        description = "Size of the font";
+        type = number;
+        default = 13;
+      };
     };
   };
 

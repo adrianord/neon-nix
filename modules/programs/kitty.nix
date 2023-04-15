@@ -32,7 +32,7 @@ in
           enable = true;
           font = {
             name = cfg.font;
-            size = 13;
+            size = config.neon.common.font.size;
           };
           theme = "Catppuccin-Mocha";
           settings = {

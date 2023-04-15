@@ -1,8 +1,8 @@
-{ ... }:
+{ config, ... }:
 
 let
   fontFamily = "JetBrainsMono Nerd Font";
-  fontSize = 13;
+  fontSize = config.neon.common.font.size;
 in
 {
   home._.programs.vscode.userSettings = {

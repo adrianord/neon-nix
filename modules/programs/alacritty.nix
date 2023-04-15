@@ -29,7 +29,7 @@ in
           "${catppuccinRepo}/catppuccin-mocha.yml"
         ];
         font = {
-          size = 13;
+          size = config.neon.common.font.size;
           normal = {
             family = cfg.font;
           };
