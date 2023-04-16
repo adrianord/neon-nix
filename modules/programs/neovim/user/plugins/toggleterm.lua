@@ -1,8 +1,11 @@
 return {
-  size = function(term)
-    if term.direction == "horizontal" then
-      return 25
-    end
-    return 10
-  end,
+  "akinsho/toggleterm.nvim",
+  opts = {
+    size = function(term)
+      if term.direction == "horizontal" then
+        return 25
+      end
+      return 10
+    end,
+  },
 }

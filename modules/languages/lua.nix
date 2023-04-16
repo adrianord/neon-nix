@@ -18,7 +18,7 @@ in
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "sumneko_lua" ];
+        servers = [ "lua_ls" ];
         tsLanguages = [ "lua" ];
       };
     })

@@ -1,5 +1,0 @@
-return {
-  indent = {
-    enable = false,
-  },
-}

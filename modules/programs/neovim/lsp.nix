@@ -43,7 +43,10 @@ in
       astroNvimUserTreesitter = {
         text = ''
           return {
-            ensure_installed = { ${concattedTs} }
+            "nvim-treesitter/nvim-treesitter",
+            opts = {
+              ensure_installed = { ${concattedTs} }
+            }
           }
         '';
         target = "nvim/lua/user/plugins/treesitter.lua";
@@ -54,7 +57,7 @@ in
           text = ''
             return ${lib.neon.toLuaObject value}; 
           '';
-          target = "nvim/lua/user/lsp/server-settings/${name}.lua";
+          target = "nvim/lua/user/lsp/config/${name}.lua";
         };
       })
       cfg.lsp.serverSettings;
