@@ -43,29 +43,32 @@
         };
 
         programs = {
-          aws.enable = true;
           alacritty.enable = true;
-          kitty.enable = true;
+          aws.enable = true;
+          cloudflare.enable = true;
           datree.enable = true;
           direnv.enable = true;
           discord.enable = true;
           firefox.enable = true;
+          git.enable = true;
+          kitty.enable = true;
           kubernetes.enable = true;
           neovim.enable = true;
           pulumi.enable = true;
           utils.enable = true;
           vscode.enable = true;
           zsh.enable = true;
-          git.enable = true;
         };
       };
     })
     {
       homebrew = {
         casks = [
+          "zoom"
           "obsidian"
           "spotify"
           "microsoft-remote-desktop"
+          "balenaetcher"
         ];
       };
     }

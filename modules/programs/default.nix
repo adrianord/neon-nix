@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./aws.nix
+    ./cloudflare.nix
     ./coreutilsRs.nix
     ./datree.nix
     ./direnv.nix
