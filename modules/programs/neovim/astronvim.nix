@@ -6,7 +6,7 @@ let
   astroNvimRepo = fetchGit {
     url = "https://github.com/AstroNvim/AstroNvim.git";
     ref = "main";
-    rev = "cf624ae5870ea5fcf98ff1e2f6354f6a57df3f53";
+    rev = "148a513072e6fc2a40fe8ad89534d4b6d00db5e7";
   };
 in
 {
