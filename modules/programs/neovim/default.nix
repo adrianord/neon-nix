@@ -7,7 +7,7 @@ in
 {
   options = {
     neon.programs.neovim = {
-      enable = mkEnableOption "Enable direnv and nix-direnv";
+      enable = mkEnableOption "Enable neovim";
     };
   };
   imports = [
