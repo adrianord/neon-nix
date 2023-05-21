@@ -17,10 +17,16 @@ in
     })
 
     (mkIf cfg.neovim.enable {
-      neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "lua_ls" ];
-        tsLanguages = [ "lua" ];
-      };
+      neon.programs.neovim.lsp = mkIf cfg.neovim.enable
+        {
+          servers = [ "lua_ls" ];
+          tsLanguages = [ "lua" ];
+          serverSettings = {
+            lua_ls = {
+              settings.Lua.diagnostics.globals = [ "vim" ];
+            };
+          };
+        };
     })
 
     (mkIf cfg.vscode.enable {
