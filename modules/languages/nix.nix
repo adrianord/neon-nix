@@ -22,13 +22,7 @@ in
         servers = [ "nil_ls" ];
         tsLanguages = [ "nix" ];
         serverSettings.nil_ls = {
-          settings = {
-            nil = {
-              formatting = {
-                command = [ "nixpkgs-fmt" ];
-              };
-            };
-          };
+          settings.nil.formatting.command = [ "nixpkgs-fmt" ];
         };
       };
     })
