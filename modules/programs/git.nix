@@ -72,10 +72,12 @@ in
           co = "checkout";
           dt = "difftool";
           ps = "push";
+          psf = "push --force-with-lease";
           pl = "pull";
           lol = "log --oneline";
           amend = "commit --no-edit --amend";
           cl = "clone";
+          pushf = "push --force-with-lease";
         };
         extraConfig = {
           pull = {
