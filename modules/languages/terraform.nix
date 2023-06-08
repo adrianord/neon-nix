@@ -14,6 +14,12 @@ in
           terraform
           terraform-ls
         ];
+        home.file.terraformrc = {
+          text = ''
+            plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"
+          '';
+          target = ".terraformrc";
+        };
       };
     })
 
