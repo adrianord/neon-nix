@@ -78,6 +78,7 @@
           "raspberry-pi-imager"
           "keepassxc"
           "unetbootin"
+          "todoist"
         ];
       };
     }
