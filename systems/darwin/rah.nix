@@ -13,6 +13,13 @@
     ({ lib, ... }: {
       home._.programs.emacs.enable = true;
       neon = {
+        common =
+          {
+            font = {
+              size = 14;
+            };
+          };
+
         languages = lib.neon.enableLanguages [
           "dotnet"
           "go"
