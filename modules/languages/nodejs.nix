@@ -38,7 +38,7 @@ in
             pnpm
             typescript-language-server
             typescript
-            vscode-langservers-extracted
+            #vscode-langservers-extracted
           ]);
       };
     })
