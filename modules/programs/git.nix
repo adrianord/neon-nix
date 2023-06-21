@@ -58,6 +58,7 @@ in
       ];
       programs.git = {
         enable = true;
+        lfs.enable = true;
         userName = userConf.user.fullname;
         userEmail = userConf.user.email;
         aliases = {
