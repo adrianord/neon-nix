@@ -75,4 +75,15 @@ return {
             end, { desc = "Close buffer" })
         end
     end,
+    lsp = {
+        formatting = {
+            format_on_save = {
+                enable = true,
+                ignore_filetypes = {
+                    "yaml"
+                },
+            },
+
+        },
+    },
 }
