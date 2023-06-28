@@ -60,6 +60,7 @@ in
           la = mkDefault "command ls --color=auto -lAh";
           cdcode = mkDefault "cd ~/Code";
           g = mkDefault "git";
+          rmf = mkDefault "rm -rf";
         };
         completionInit = ''
           autoload -Uz compinit
@@ -86,6 +87,12 @@ in
           bindkey "^[[1;5C" forward-word
           bindkey "^[[1;5D" backward-word
           set +o prompt_cr +o prompt_sp
+
+          nd()
+          {
+            mkdir -p -- "$1" &&
+            cd -P -- "$1"
+          }
         '';
       };
       programs.starship = {
