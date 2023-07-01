@@ -39,14 +39,15 @@ in
             typescript-language-server
             typescript
             vscode-langservers-extracted
+            volar
           ]);
       };
     })
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "tsserver" "eslint" ];
-        tsLanguages = [ "javascript" "typescript" ];
+        servers = [ "tsserver" "eslint" "volar" ];
+        tsLanguages = [ "javascript" "typescript" "vue" ];
       };
     })
 
