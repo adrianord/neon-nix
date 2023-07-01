@@ -40,14 +40,27 @@ in
             typescript
             vscode-langservers-extracted
             volar
+            svelte-language-server
           ]);
       };
     })
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "tsserver" "eslint" "volar" ];
-        tsLanguages = [ "javascript" "typescript" "vue" ];
+        servers = [
+          "tsserver"
+          "eslint"
+          "volar"
+          "svelte"
+        ];
+        tsLanguages = [
+          "javascript"
+          "typescript"
+          "html"
+          "css"
+          "vue"
+          "svelte"
+        ];
       };
     })
 
