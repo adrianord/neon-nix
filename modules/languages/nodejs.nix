@@ -50,8 +50,11 @@ in
         servers = [
           "tsserver"
           "eslint"
+          "cssls"
+          "html"
           "volar"
           "svelte"
+          "tailwindcss"
         ];
         tsLanguages = [
           "javascript"
