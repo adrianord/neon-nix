@@ -21,6 +21,7 @@
           };
 
         languages = lib.neon.enableLanguages [
+          "bash"
           "dotnet"
           "go"
           "lua"

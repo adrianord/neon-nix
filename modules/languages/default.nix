@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bash.nix
     ./dotnet.nix
     ./go.nix
     ./json.nix
