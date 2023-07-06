@@ -38,6 +38,7 @@ in
             pnpm
             typescript-language-server
             typescript
+            zx
             vscode-langservers-extracted
             volar
             svelte-language-server
