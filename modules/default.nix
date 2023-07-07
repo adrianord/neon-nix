@@ -23,14 +23,9 @@ in
 host.system {
   system = userConf.host.arch + "-" + userConf.host.os;
   specialArgs = { inherit inputs userConf lib; } // additionalSpecialArgs;
-  modules = host.modules ++ [
-    {
-      nix.extraOptions = ''
-        experimental-features = nix-command flakes
-      '';
-    }
-  ] ++
+  modules = host.modules ++
     [
+      ./nix.nix
       ./common
       ./home.nix
       ./languages
