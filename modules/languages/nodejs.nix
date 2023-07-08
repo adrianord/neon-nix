@@ -50,11 +50,13 @@ in
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
         servers = [
           "tsserver"
-          "eslint"
           "cssls"
           "html"
           "volar"
           "svelte"
+        ];
+        masonServers = [
+          "eslint"
           "tailwindcss"
         ];
         tsLanguages = [

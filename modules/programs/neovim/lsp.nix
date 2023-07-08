@@ -8,6 +8,8 @@ let
 
   quotedTs = builtins.map (x: "\"${x}\"") cfg.lsp.tsLanguages;
   concattedTs = builtins.concatStringsSep ", " quotedTs;
+  quotedMasonServers = builtins.map (x: "\"${x}\"") cfg.lsp.masonServers;
+  concattedMasonServers = builtins.concatStringsSep ", " quotedMasonServers;
 
   serverSettingsOpts = with types; { };
 in
@@ -28,6 +30,11 @@ in
         description = "Server settings for LSP";
         type = attrsOf attrs;
         default = { };
+      };
+      masonServers = mkOption {
+        description = "List of servers to enable that are managed by mason";
+        type = listOf str;
+        default = [ ];
       };
     };
   };
@@ -50,6 +57,17 @@ in
           }
         '';
         target = "nvim/lua/user/plugins/treesitter.lua";
+      };
+      astroNvimUserMasonLspConfig = {
+        text = ''
+          return {
+              "williamboman/mason-lspconfig.nvim",
+              opts = {
+                ensure_installed = { ${concattedMasonServers} }
+              }
+            }
+        '';
+        target = "nvim/lua/user/plugins/mason-lspconfig.lua";
       };
     } // concatMapAttrs
       (name: value: {

@@ -12,12 +12,13 @@ in
       home._ = {
         home.packages = with pkgs; [
           dotnet-sdk_7
-          omnisharp-roslyn
         ];
 
-        home.sessionPath = [
-          "$HOME/.dotnet/tools"
-        ];
+        home = {
+          sessionPath = [
+            "$HOME/.dotnet/tools"
+          ];
+        };
       };
     })
 
@@ -31,7 +32,7 @@ in
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = {
-        servers = [ "omnisharp" ];
+        masonServers = [ "omnisharp" ];
         tsLanguages = [ "c_sharp" ];
       };
     })
