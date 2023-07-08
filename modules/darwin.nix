@@ -58,6 +58,7 @@ in
         "rectangle"
         "unnaturalscrollwheels"
         "topnotch"
+        "cloudflare-warp"
       ];
     })
 
