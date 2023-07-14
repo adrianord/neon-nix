@@ -79,6 +79,7 @@ in
           amend = "commit --no-edit --amend";
           cl = "clone";
           pushf = "push --force-with-lease";
+          cloneb = "clone --no-checkout --config core.bare=true";
         };
         extraConfig = {
           pull = {
