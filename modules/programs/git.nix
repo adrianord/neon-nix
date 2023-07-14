@@ -80,6 +80,12 @@ in
           cl = "clone";
           pushf = "push --force-with-lease";
           cloneb = "clone --no-checkout --config core.bare=true";
+          wt = "worktree";
+          wtl = "worktree list";
+          wta = "worktree add";
+          wtr = "worktree remove";
+          wtp = "worktree prune";
+          wtc = "worktree add $1 $1";
         };
         extraConfig = {
           pull = {
