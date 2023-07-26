@@ -5,7 +5,7 @@
       experimental-features = nix-command flakes
     '';
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = false; # https://github.com/NixOS/nix/issues/7273
     };
     gc = {
       automatic = true;
