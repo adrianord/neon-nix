@@ -16,6 +16,8 @@ in
         home.packages = with pkgs;[
           gopls
           goreleaser
+          air
+          jetbrains.goland
         ];
         programs = {
           go = {
