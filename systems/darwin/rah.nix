@@ -61,6 +61,7 @@
           coreutilsRs.enable = true;
           coreutilsRs.zshIntegration = true;
           gcloud.enable = true;
+          mirrord.enable = true;
         };
       };
     })

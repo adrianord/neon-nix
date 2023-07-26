@@ -15,6 +15,7 @@
     ./git.nix
     ./kitty.nix
     ./kubernetes.nix
+    ./mirrord.nix
     ./neovim
     ./pulumi.nix
     ./utils.nix
