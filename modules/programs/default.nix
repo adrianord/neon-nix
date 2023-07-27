@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./ansible.nix
     ./aws.nix
     ./cloudflare.nix
     ./coreutilsRs.nix
