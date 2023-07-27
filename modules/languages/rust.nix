@@ -26,7 +26,7 @@ in
           bacon
           wasm-pack
           wasm-bindgen-cli
-          (rust-bin.stable.latest.default.override {
+          (rust-bin.nightly.latest.default.override {
             extensions = [ "rust-src" ];
             targets = [
               "aarch64-apple-darwin"
