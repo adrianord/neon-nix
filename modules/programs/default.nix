@@ -17,6 +17,7 @@
     ./kubernetes.nix
     ./mirrord.nix
     ./neovim
+    ./oci.nix
     ./pulumi.nix
     ./utils.nix
     ./vscode

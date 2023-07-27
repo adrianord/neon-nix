@@ -62,6 +62,7 @@
           coreutilsRs.zshIntegration = true;
           gcloud.enable = true;
           mirrord.enable = true;
+          oci.enable = true;
         };
       };
     })
