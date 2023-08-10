@@ -13,7 +13,9 @@ in
         home.packages = with pkgs;[
           terraform
           terraform-ls
-        ];
+        ] ++ (with pkgs.nodePackages; [
+          cdktf-cli
+        ]);
         home.file.terraformrc = {
           text = ''
             plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"
