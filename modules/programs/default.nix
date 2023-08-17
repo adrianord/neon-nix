@@ -7,6 +7,7 @@
     ./aws.nix
     ./cloudflare.nix
     ./coreutilsRs.nix
+    ./dagger.nix
     ./datree.nix
     ./direnv.nix
     ./discord.nix

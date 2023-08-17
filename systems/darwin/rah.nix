@@ -46,6 +46,7 @@
           aws.enable = true;
           alacritty.enable = true;
           kitty.enable = true;
+          dagger.enable = true;
           datree.enable = true;
           direnv.enable = true;
           discord.enable = true;
