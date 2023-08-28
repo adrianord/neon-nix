@@ -43,6 +43,10 @@ return {
                 function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
                 desc = "Previous buffer",
             },
+            ["<leader>lp"] = {
+                "<cmd>LspRestart<cr>",
+                desc = "Restart LSP",
+            }
         },
         i = {
             ["<M-C-1>"] = toggleTerm,
