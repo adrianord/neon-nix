@@ -66,7 +66,6 @@
         casks = [
           "zoom"
           "obsidian"
-          "spotify"
           "microsoft-remote-desktop"
           "balenaetcher"
         ];
@@ -74,3 +73,4 @@
     }
   ];
 }
+
