@@ -23,6 +23,7 @@
     ./pulumi.nix
     ./utils.nix
     ./vscode
+    ./zellij.nix
     ./zsh.nix
   ];
 }

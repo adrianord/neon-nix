@@ -65,6 +65,7 @@
           mirrord.enable = true;
           oci.enable = true;
           ansible.enable = true;
+          zellij.enable = true;
         };
       };
     })
