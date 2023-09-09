@@ -33,6 +33,7 @@ in
             nodejs
             jq
             yarn
+            bun
           ] ++ (with pkgs.nodePackages; [
             js-beautify
             pnpm
