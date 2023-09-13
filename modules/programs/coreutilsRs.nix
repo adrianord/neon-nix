@@ -17,7 +17,7 @@ in
       ({
         home._ = {
           home.packages = with pkgs; [
-            exa
+            eza
             bat
             ripgrep
             du-dust
@@ -29,7 +29,7 @@ in
       (mkIf cfg.zshIntegration {
         home._.programs.zsh = {
           shellAliases = {
-            ls = "exa";
+            ls = "eza";
             cat = "bat";
             grep = "rg";
             find = "fd";
