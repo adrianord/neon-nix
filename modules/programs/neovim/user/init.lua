@@ -1,4 +1,3 @@
-local toggleTerm = { "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" };
 local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" };
 local toggleExplorer = { "<cmd>Neotree focus<cr>", desc = "Toggle Explorer" };
 
@@ -27,9 +26,6 @@ return {
     },
     mappings = {
         n = {
-            ["<leader>th"] = toggleTerm,
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
             ["<M-1>"] = toggleExplorer,
             ["<D-1>"] = toggleExplorer,
             ["<M-CR>"] = lspCodeAction,
@@ -49,13 +45,8 @@ return {
             }
         },
         i = {
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
         },
         t = {
-            ["<M-C-1>"] = toggleTerm,
-            ["<D-C-1>"] = toggleTerm,
-            ["<S-ESC>"] = toggleTerm,
             ["<C-l>"] = false,
         },
     },
