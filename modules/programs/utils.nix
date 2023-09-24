@@ -17,7 +17,6 @@ in
       nix-diff
       nixos-generators
       nmap
-      postman
       tree
       unixtools.watch
       viddy
