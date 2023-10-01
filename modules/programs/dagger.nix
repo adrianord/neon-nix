@@ -12,13 +12,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    homebrew = {
-      taps = [
-        "dagger/tap"
-      ];
-      brews = [
-        "dagger"
-      ];
-    };
+    home._ =
+      {
+        home.packages = with pkgs; [
+          dagger
+        ];
+      };
   };
 }
