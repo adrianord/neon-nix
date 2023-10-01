@@ -17,6 +17,9 @@ in
         home.packages = with pkgs; [
           dagger
         ];
+        programs.zsh.initExtra = ''
+          source <(dagger completion zsh)
+        '';
       };
   };
 }
