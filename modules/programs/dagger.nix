@@ -11,15 +11,20 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    home._ =
-      {
-        home.packages = with pkgs; [
-          dagger
-        ];
-        programs.zsh.initExtra = ''
-          source <(dagger completion zsh)
-        '';
-      };
-  };
+  config = mkIf cfg.enable (mkMerge [
+    (mkIf pkgs.stdenv.hostPlatform.isLinux { })
+
+    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      home._ =
+        {
+          home.packages = with pkgs; [
+            dagger
+          ];
+          programs.zsh.initExtra = ''
+            source <(dagger completion zsh)
+          '';
+        };
+    })
+  ]);
+
 }
