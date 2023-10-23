@@ -15,11 +15,11 @@ in
     (mkIf pkgs.stdenv.hostPlatform.isLinux { })
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      homebrew.brews = [
+        "dagger"
+      ];
       home._ =
         {
-          home.packages = with pkgs; [
-            dagger
-          ];
           programs.zsh.initExtra = ''
             source <(dagger completion zsh)
           '';
