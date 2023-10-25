@@ -21,6 +21,7 @@
     ./neovim
     ./oci.nix
     ./pulumi.nix
+    ./signal.nix
     ./utils.nix
     ./vscode
     ./zellij.nix

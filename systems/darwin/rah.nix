@@ -66,6 +66,7 @@
           oci.enable = true;
           ansible.enable = true;
           zellij.enable = false;
+          signal.enable = true;
         };
       };
     })
