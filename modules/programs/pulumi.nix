@@ -18,7 +18,7 @@ in
         PULUMI_SKIP_UPDATE_CHECK = "true";
       };
       packages = with pkgs; [
-        pulumi-bin
+        pulumi
         pulumictl
         tf2pulumi
       ];
