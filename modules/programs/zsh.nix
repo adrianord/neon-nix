@@ -101,6 +101,7 @@ in
         settings = {
           add_newline = true;
           gcloud.disabled = true;
+          battery.disabled = true;
         };
       };
       programs.fzf = {
