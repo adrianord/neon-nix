@@ -48,6 +48,7 @@
           cloudflare.enable = true;
           datree.enable = true;
           direnv.enable = true;
+          dagger.enable = true;
           discord.enable = true;
           firefox.enable = true;
           git.enable = true;

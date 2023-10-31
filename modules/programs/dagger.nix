@@ -12,19 +12,16 @@ in
   };
 
   config = mkIf cfg.enable (mkMerge [
-    (mkIf pkgs.stdenv.hostPlatform.isLinux { })
-
-    (mkIf pkgs.stdenv.hostPlatform.isDarwin {
-      homebrew.brews = [
-        "dagger"
-      ];
+    ({
       home._ =
         {
+          home.packages = [
+            pkgs.dagger
+          ];
           programs.zsh.initExtra = ''
             source <(dagger completion zsh)
           '';
         };
     })
   ]);
-
 }
