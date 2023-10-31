@@ -25,5 +25,13 @@ in
       };
     })
 
+    ({
+      home._ =
+        {
+          programs.zsh.initExtra = ''
+            source <(mirrord completions zsh)
+          '';
+        };
+    })
   ]);
 }
