@@ -8,6 +8,7 @@
     ./cloudflare.nix
     ./coreutilsRs.nix
     ./dagger.nix
+    ./datagrip.nix
     ./datree.nix
     ./direnv.nix
     ./discord.nix

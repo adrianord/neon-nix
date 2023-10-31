@@ -47,6 +47,7 @@
           alacritty.enable = true;
           kitty.enable = true;
           dagger.enable = true;
+          datagrip.enable = true;
           datree.enable = true;
           direnv.enable = true;
           discord.enable = true;
