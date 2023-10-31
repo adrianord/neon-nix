@@ -19,9 +19,6 @@
 
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
     rust-overlay .inputs.nixpkgs.follows = "nixpkgs";
-
-    dagger.url = "github:dagger/nix";
-    dagger.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs:

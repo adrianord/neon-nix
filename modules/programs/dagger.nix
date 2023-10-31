@@ -16,7 +16,7 @@ in
       home._ =
         {
           home.packages = [
-            pkgs.dagger
+            pkgs.nur.repos.dagger.dagger
           ];
           programs.zsh.initExtra = ''
             source <(dagger completion zsh)
