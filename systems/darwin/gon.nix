@@ -57,6 +57,7 @@
           neovim.enable = true;
           pulumi.enable = true;
           utils.enable = true;
+          vivaldi.enable = true;
           vscode.enable = true;
           zsh.enable = true;
         };
