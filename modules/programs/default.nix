@@ -24,6 +24,7 @@
     ./pulumi.nix
     ./signal.nix
     ./utils.nix
+    ./vivaldi.nix
     ./vscode
     ./zellij.nix
     ./zsh.nix

@@ -68,6 +68,7 @@
           ansible.enable = true;
           zellij.enable = false;
           signal.enable = true;
+          vivaldi.enable = true;
         };
       };
     })
