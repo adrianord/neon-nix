@@ -21,6 +21,7 @@ in
         kind
         eksctl
         krew
+        nodePackages.cdk8s-cli
       ];
       programs.zsh.initExtra = ''
         source <(kubectl completion zsh)
