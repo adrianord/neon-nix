@@ -14,9 +14,6 @@ in
   config = mkIf cfg.enable (mkMerge [
     ({
       home._ = {
-        home.sessionVariables = {
-          BROWSER = "firefox";
-        };
         programs.firefox = {
           enable = true;
           package = pkgs.firefox-bin;
@@ -46,10 +43,18 @@ in
     })
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
-      homebrew = {
-        brews = [
-          "firefoxpwa"
-        ];
+      home._ = {
+        home.sessionVariables = {
+          BROWSER = "$HOME/Applications/Home Manager Apps/Firefox.app";
+        };
+      };
+    })
+
+    (mkIf pkgs.stdenv.hostPlatform.isLinux {
+      home._ = {
+        home.sessionVariables = {
+          BROWSER = "firefox";
+        };
       };
     })
   ]);
