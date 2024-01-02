@@ -19,7 +19,7 @@ in
     (mkIf cfg.vscode.enable {
       home._.programs.vscode = {
         extensions = with pkgs; [
-          vscode-extensions.bungcip.better-toml
+          vscode-extensions.tamasfe.even-better-toml
         ];
       };
     })

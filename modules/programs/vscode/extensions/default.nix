@@ -7,11 +7,10 @@
 
   home._.programs.vscode = {
     extensions = with pkgs.vscode-extensions; [
-      monokai.theme-monokai-pro-vscode
-      Catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc
       streetsidesoftware.code-spell-checker
-      PKief.material-icon-theme
-      Gruntfuggly.todo-tree
+      pkief.material-icon-theme
+      gruntfuggly.todo-tree
       ms-vscode-remote.remote-ssh
       christian-kohler.path-intellisense
       eamodio.gitlens

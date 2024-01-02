@@ -74,7 +74,6 @@ in
     (mkIf cfg.vscode.enable {
       home._.programs.vscode = {
         extensions = with pkgs.vscode-extensions;[
-          ms-vscode.vscode-typescript-next
           dbaeumer.vscode-eslint
           bradlc.vscode-tailwindcss
           prisma.prisma
