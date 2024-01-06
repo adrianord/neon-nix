@@ -21,7 +21,11 @@ in
         pulumi
         pulumictl
         tf2pulumi
-      ];
+      ] ++ (with pkgs.pulumiPackages; [
+        pulumi-language-nodejs
+        pulumi-language-python
+        pulumi-language-go
+      ]);
     };
   };
 }
