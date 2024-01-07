@@ -80,7 +80,6 @@
           "obsidian"
           "microsoft-remote-desktop"
           "balenaetcher"
-          "bitwarden"
           "nordvpn"
           "vmware-fusion"
           "raspberry-pi-imager"
