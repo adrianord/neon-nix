@@ -22,7 +22,7 @@ in
         programs = {
           go = {
             enable = true;
-            package = pkgs.go_1_20;
+            package = pkgs.go;
             inherit goPath goBin;
           };
         };
