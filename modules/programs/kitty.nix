@@ -40,8 +40,6 @@ in
             scrollback_lines = 10000;
             enable_audio_bell = false;
             update_check_interval = 0;
-            macos_titlebar_color = "background";
-            macos_quit_when_last_window_closed = "yes";
             placement_strategy = "top-left";
             cursor_blink_interval = 0;
             tab_bar_edge = "top";
@@ -54,6 +52,11 @@ in
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
       home._.programs.kitty = {
+        settings = {
+          macos_titlebar_color = "background";
+          macos_quit_when_last_window_closed = "yes";
+          macos_show_window_title_in = "window";
+        };
         # Helpful video https://www.youtube.com/watch?v=lHBD6pdJ-Ng
         keybindings = mkMerge ((genList
           (x:
