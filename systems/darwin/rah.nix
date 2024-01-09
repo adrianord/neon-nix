@@ -43,6 +43,7 @@
         };
 
         programs = {
+          arc.enable = true;
           aws.enable = true;
           alacritty.enable = true;
           kitty.enable = true;

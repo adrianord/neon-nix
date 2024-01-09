@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./arc.nix
     ./alacritty.nix
     ./ansible.nix
     ./aws.nix
