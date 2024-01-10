@@ -59,6 +59,7 @@ in
         masonServers = [
           "eslint"
           "tailwindcss"
+          "emmet_language_server"
         ];
         tsLanguages = [
           "javascript"
