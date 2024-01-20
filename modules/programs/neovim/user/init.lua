@@ -48,6 +48,8 @@ return {
         },
         t = {
             ["<C-l>"] = false,
+            ["<C-j>"] = false,
+            ["<C-k>"] = false,
         },
     },
     polish = function()
