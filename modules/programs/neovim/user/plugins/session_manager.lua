@@ -1,5 +1,9 @@
 return {
   "Shatur/neovim-session-manager",
+  event = "VimEnter",
+  priority = 10,
+  branch = "master",
+  commit = false,
   opts = (function()
     if vim.g.vscode then
       return {
