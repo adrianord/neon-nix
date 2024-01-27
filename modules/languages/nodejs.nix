@@ -60,6 +60,7 @@ in
           "eslint"
           "tailwindcss"
           "emmet_language_server"
+          "astro"
         ];
         tsLanguages = [
           "javascript"
@@ -68,6 +69,7 @@ in
           "css"
           "vue"
           "svelte"
+          "astro"
         ];
       };
     })
