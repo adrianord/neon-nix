@@ -60,6 +60,9 @@ return {
             require("astronvim.utils.buffer").close()
             if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then
                 require("alpha").start(true)
+                if require("astronvim.utils").is_available "neovim-session-manager" then
+                    require("session_manager").delete_current_dir_session()
+                end
             end
         end, { desc = "Close buffer" })
     end,
