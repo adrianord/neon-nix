@@ -6,6 +6,7 @@
     ./dotnet.nix
     ./go.nix
     ./json.nix
+    ./latex.nix
     ./lua.nix
     ./markdown.nix
     ./nix.nix

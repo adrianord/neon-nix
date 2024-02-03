@@ -24,6 +24,7 @@
           "bash"
           "dotnet"
           "go"
+          "latex"
           "lua"
           "nix"
           "nodejs"
