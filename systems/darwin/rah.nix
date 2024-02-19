@@ -24,11 +24,12 @@
           "bash"
           "dotnet"
           "go"
+          "just"
           "latex"
           "lua"
+          "markdown"
           "nix"
           "nodejs"
-          "markdown"
           "protobuf"
           "python"
           "rust"
@@ -88,6 +89,7 @@
           "keepassxc"
           "unetbootin"
           "todoist"
+          "slack"
         ];
       };
     }
