@@ -17,6 +17,7 @@ in
       nix-diff
       nixos-generators
       nmap
+      parallel
       tree
       unixtools.watch
       viddy
