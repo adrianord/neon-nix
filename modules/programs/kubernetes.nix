@@ -17,11 +17,14 @@ in
         kubectl
         kubectx
         kubernetes-helm
+        kubernetes-helmPlugins.helm-diff
         k9s
         kind
         eksctl
         krew
         nodePackages.cdk8s-cli
+        kustomize
+        dive
       ];
       programs.zsh.initExtra = ''
         source <(kubectl completion zsh)
