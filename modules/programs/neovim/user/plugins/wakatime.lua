@@ -1,6 +1,6 @@
 return {
   {
-    "AstroNvim/astrocommunity",
-    { import = "astrocommunity.media.vim-wakatime" },
+    --    "AstroNvim/astrocommunity",
+    --    { import = "astrocommunity.media.vim-wakatime" },
   },
 }
