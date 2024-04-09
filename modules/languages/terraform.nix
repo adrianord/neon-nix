@@ -13,6 +13,7 @@ in
         home.packages = with pkgs;[
           terraform
           terraform-ls
+          tflint
         ] ++ (with pkgs.nodePackages; [
           cdktf-cli
         ]);
