@@ -15,6 +15,7 @@ in
     home._ = {
       home.packages = with pkgs; [
         awscli2
+        aws-vault
       ];
       programs.zsh = {
 
