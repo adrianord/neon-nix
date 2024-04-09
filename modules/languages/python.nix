@@ -11,6 +11,7 @@ in
     ({
       home._ = {
         home.packages = with pkgs; [
+          poetry
           nodePackages.pyright
           (python3.withPackages
             (p: with p; [
