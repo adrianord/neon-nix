@@ -96,6 +96,9 @@ in
           init = {
             defaultBranch = "main";
           };
+          worktree = {
+            guessRemote = true;
+          };
         };
         delta = {
           enable = true;
