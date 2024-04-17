@@ -71,6 +71,9 @@
         casks = [
           "obsidian"
           "intellij-idea"
+          "dbeaver-community"
+          "bitwarden"
+          "datagrip"
         ];
         brews = [
           "fanatics-gaming/homebrew-tap/fbg-platform-tools"
