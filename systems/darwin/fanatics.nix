@@ -74,6 +74,7 @@
           "dbeaver-community"
           "bitwarden"
           "datagrip"
+          "nordvpn"
         ];
         brews = [
           "fanatics-gaming/homebrew-tap/fbg-platform-tools"
