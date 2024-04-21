@@ -12,6 +12,8 @@ in
       home._ = {
         home.packages = with pkgs; [
           poetry
+          ruff
+          ruff-lsp
           nodePackages.pyright
           (python3.withPackages
             (p: with p; [
@@ -24,7 +26,7 @@ in
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "pyright" ];
+        servers = [ "pyright" "ruff_lsp" ];
         tsLanguages = [ "python" ];
       };
     })
