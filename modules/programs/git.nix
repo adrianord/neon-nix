@@ -99,6 +99,9 @@ in
           worktree = {
             guessRemote = true;
           };
+          fetch = {
+            prune = true;
+          };
         };
         delta = {
           enable = true;
