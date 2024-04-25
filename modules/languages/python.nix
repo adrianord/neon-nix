@@ -33,6 +33,20 @@ in
 
     (mkIf cfg.vscode.enable { })
 
-    (mkIf cfg.zsh.enable { })
+    (mkIf cfg.zsh.enable {
+      home._.programs.zsh = {
+        plugins = [
+          {
+            name = "zsh-activate-py-environment";
+            src = pkgs.fetchFromGitHub {
+              owner = "se-jaeger";
+              repo = "zsh-activate-py-environment";
+              rev = "60f7d30b927d0d6e37ed8eeba9b788c319e1136e";
+              sha256 = "sha256-kk2WIxUptWMRel3Ca+u5lhaHVU/svO5rF8NOiOfSrXA=";
+            };
+          }
+        ];
+      };
+    })
   ]);
 }
