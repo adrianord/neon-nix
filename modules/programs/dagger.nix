@@ -18,9 +18,6 @@ in
           home.packages = [
             pkgs.nur.repos.dagger.dagger
           ];
-          programs.zsh.initExtra = ''
-            source <(dagger completion zsh)
-          '';
         };
     })
   ]);
