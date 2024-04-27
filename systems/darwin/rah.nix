@@ -90,6 +90,7 @@
           "unetbootin"
           "todoist"
           "slack"
+          "1password"
         ];
       };
     }
