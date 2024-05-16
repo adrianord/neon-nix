@@ -26,6 +26,7 @@ in
           nodePackages.cdk8s-cli
           kustomize
           dive
+          kubeconform
         ];
         programs.zsh = {
           plugins = [
