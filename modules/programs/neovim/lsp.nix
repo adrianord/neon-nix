@@ -11,7 +11,13 @@ let
   quotedMasonServers = builtins.map (x: "\"${x}\"") cfg.lsp.masonServers;
   concattedMasonServers = builtins.concatStringsSep ", " quotedMasonServers;
 
-  serverSettingsOpts = with types; { };
+  concattedLspConfigs = builtins.concatStringsSep ", " (mapAttrsToList
+    (name: value: ''
+      ${name} = ${lib.neon.toLuaObject value}
+    '')
+    cfg.lsp.serverSettings);
+
+  nvimDir = "${config.home.config.xdg.configHome}/nvim";
 in
 {
   options = {
@@ -40,12 +46,42 @@ in
   };
 
   config = mkIf cfg.enable {
+    home._.home.file = {
+      "${nvimDir}/lua/plugins/astrolsp-extended.lua".text = ''
+        return {
+          "AstroNvim/astrolsp",
+          opts = {
+            servers = { ${concattedServers} },
+            config = { ${concattedLspConfigs} },
+          },
+        }
+      '';
+
+      "${nvimDir}/lua/plugins/treesitter-extended.lua".text = ''
+        return {
+          "nvim-treesitter/nvim-treesitter",
+          opts = {
+            ensure_installed = { ${concattedTs} }
+          }
+        }
+      '';
+
+      "${nvimDir}/lua/plugins/mason-lspconfig-extended.lua".text = ''
+        return {
+          "williamboman/mason-lspconfig.nvim",
+          opts = {
+            ensure_installed = { ${concattedMasonServers} }
+          }
+        }
+      '';
+    };
+
     home._.xdg.configFile = {
       astroNvimUserLspServer = {
         text = ''
           return { ${concattedServers} }
         '';
-        target = "nvim/lua/user/lsp/servers.lua";
+        target = "old_nvim/lua/user/lsp/servers.lua";
       };
       astroNvimUserTreesitter = {
         text = ''
@@ -56,7 +92,7 @@ in
             }
           }
         '';
-        target = "nvim/lua/user/plugins/treesitter.lua";
+        target = "old_nvim/lua/user/plugins/treesitter.lua";
       };
       astroNvimUserMasonLspConfig = {
         text = ''
@@ -67,7 +103,7 @@ in
               }
             }
         '';
-        target = "nvim/lua/user/plugins/mason-lspconfig.lua";
+        target = "old_nvim/lua/user/plugins/mason-lspconfig.lua";
       };
     } // concatMapAttrs
       (name: value: {
@@ -75,7 +111,7 @@ in
           text = ''
             return ${lib.neon.toLuaObject value}; 
           '';
-          target = "nvim/lua/user/lsp/config/${name}.lua";
+          target = "old_nvim/lua/user/lsp/config/${name}.lua";
         };
       })
       cfg.lsp.serverSettings;

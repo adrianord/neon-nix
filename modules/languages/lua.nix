@@ -23,7 +23,10 @@ in
           tsLanguages = [ "lua" ];
           serverSettings = {
             lua_ls = {
-              settings.Lua.diagnostics.globals = [ "vim" ];
+              settings.Lua = {
+                format.enable = true;
+                diagnostics.globals = [ "vim" ];
+              };
             };
           };
         };

@@ -13,12 +13,18 @@ in
   home._ = mkIf cfg.enable {
     xdg.configFile.astroNvim = {
       source = astroNvimRepo;
-      target = "nvim";
+      target = "old_nvim";
       recursive = true;
     };
     xdg.configFile.astroNvimUserFiles = {
       source = ./user;
-      target = "nvim/lua/user";
+      target = "old_nvim/lua/user";
+      recursive = true;
+    };
+
+    xdg.configFile.astroNvimV4Template = {
+      source = ../../../files/nvim;
+      target = "nvim";
       recursive = true;
     };
   };

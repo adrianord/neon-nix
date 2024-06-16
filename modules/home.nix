@@ -1,4 +1,4 @@
-{ lib, options, userConf, inputs, pkgs, ... }:
+{ lib, options, userConf, config, ... }:
 
 with lib;
 {
@@ -8,6 +8,10 @@ with lib;
         type = attrs;
         default = { };
         description = "For passing arbitrary configuration to user's home-manager config";
+      };
+      config = mkOption {
+        type = attrs;
+        default = config.home-manager.users.${userConf.user.name};
       };
     };
   };
