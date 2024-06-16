@@ -34,7 +34,7 @@ in
 
   config = mkMerge [
     ({
-      fonts.fonts = cfg.packages;
+      fonts.packages = cfg.packages;
     })
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {

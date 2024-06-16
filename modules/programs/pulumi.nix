@@ -18,14 +18,10 @@ in
         PULUMI_SKIP_UPDATE_CHECK = "true";
       };
       packages = with pkgs; [
-        pulumi
+        pulumi-bin
         pulumictl
         tf2pulumi
-      ] ++ (with pkgs.pulumiPackages; [
-        pulumi-language-nodejs
-        pulumi-language-python
-        pulumi-language-go
-      ]);
+      ];
     };
   };
 }

@@ -14,7 +14,7 @@ in
           poetry
           ruff
           ruff-lsp
-          nodePackages.pyright
+          pyright
           (python3.withPackages
             (p: with p; [
               setuptools
