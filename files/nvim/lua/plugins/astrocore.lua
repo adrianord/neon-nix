@@ -1,7 +1,6 @@
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 
-
 local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" };
 local toggleExplorer = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" };
 
@@ -10,6 +9,12 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    sessions = {
+      autosave = {
+        last = true,
+        cwd = true,
+      },
+    },
     features = {
       large_buf = { size = 1024 * 256, lines = 10000 },
       autopairs = true,
@@ -54,7 +59,22 @@ return {
         ["<Leader>lp"] = {
             "<cmd>LspRestart<cr>",
             desc = "Restart LSP",
-        }
+        },
+        ["<Leader>c"] = {
+          function()
+            local bufs = vim.fn.getbufinfo { buflisted = 1 }
+            require("astrocore.buffer").close()
+            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then
+              require("alpha").start(true)
+              if require("astrocore").is_available "resession.nvim" then
+                local current = require("resession").get_current_session_info()
+                if current then
+                  require("resession").delete(current.name, { dir = current.dir })
+                end
+              end
+            end
+          end
+        },
       },
       i = {
       },
@@ -63,7 +83,25 @@ return {
         ["<C-j>"] = false,
         ["<C-k>"] = false,
       },
-
+    },
+    autocmds = {
+      restore_session = {
+        {
+          event = "VimEnter",
+          desc = "Restore previous directory session if neovim opened with no arguments",
+          nested = true, -- trigger other autocommands as buffers open
+          callback = function()
+            -- Only load the session if nvim was started with no args
+            if vim.fn.argc(-1) == 0 then
+              -- try to load a directory session using the current working directory
+              require("resession").load(
+                vim.fn.getcwd(),
+                { dir = "dirsession", silence_errors = true }
+              )
+            end
+          end,
+        },
+      },
     },
   },
 }
