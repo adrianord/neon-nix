@@ -72,6 +72,7 @@
           zellij.enable = false;
           signal.enable = true;
           vivaldi.enable = true;
+          ghostty.enable = true;
         };
       };
     })

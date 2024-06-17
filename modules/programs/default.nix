@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./arc.nix
     ./alacritty.nix
     ./ansible.nix
+    ./arc.nix
     ./aws.nix
     ./cloudflare.nix
     ./coreutilsRs.nix
@@ -16,6 +16,7 @@
     ./edge.nix
     ./firefox.nix
     ./gcloud.nix
+    ./ghostty.nix
     ./git.nix
     ./kitty.nix
     ./kubernetes.nix
