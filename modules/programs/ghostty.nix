@@ -22,8 +22,9 @@ in
 
           keybind = super+physical:one=unbind
           keybind = super+ctrl+physical:one=unbind
+          keybind = super+enter=unbind
 
-          macos-titlebar-tabs = true
+          macos-titlebar-style = transparent
         '';
         target = "ghostty/config";
       };
