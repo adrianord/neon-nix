@@ -56,6 +56,7 @@
           coreutilsRs.enable = true;
           coreutilsRs.zshIntegration = true;
           ansible.enable = true;
+          ghostty.enable = true;
         };
       };
     })
