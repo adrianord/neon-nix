@@ -19,6 +19,9 @@ in
           quit-after-last-window-closed = true
           font-family = "${config.neon.common.font.default}"
           font-size = ${toString config.neon.common.font.size}
+          font-feature = -calt
+          font-feature = -liga
+          font-feature = -dlig
 
           keybind = super+physical:one=unbind
           keybind = super+ctrl+physical:one=unbind
