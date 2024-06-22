@@ -82,6 +82,9 @@ return {
         ["<C-l>"] = false,
         ["<C-j>"] = false,
         ["<C-k>"] = false,
+        ["<C-L>"] = false,
+        ["<C-J>"] = false,
+        ["<C-K>"] = false,
       },
     },
     autocmds = {
