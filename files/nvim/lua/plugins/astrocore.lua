@@ -106,5 +106,12 @@ return {
         },
       },
     },
+    tilt = {
+      event = "BufRead",
+      pattern = "Tiltfile",
+      callback = function()
+        vim.bo.filetype = "tiltfile"
+      end,
+    }
   },
 }

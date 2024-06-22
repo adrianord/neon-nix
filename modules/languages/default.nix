@@ -16,6 +16,7 @@
     ./python.nix
     ./rust.nix
     ./terraform.nix
+    ./tilt.nix
     ./toml.nix
     ./yaml.nix
   ];

@@ -29,7 +29,9 @@
           "nix"
           "nodejs"
           "python"
+          "rust"
           "terraform"
+          "tilt"
           "yaml"
         ];
         darwin = {
