@@ -92,6 +92,8 @@
           "todoist"
           "slack"
           "1password"
+          "moonlight"
+          "linear-linear"
         ];
       };
     }
