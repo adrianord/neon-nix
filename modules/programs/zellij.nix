@@ -16,6 +16,9 @@ in
       programs.zellij = {
         enable = true;
         enableZshIntegration = config.neon.programs.zsh.enable;
+        settings = {
+          mouse_mode = false;
+        };
       };
     };
   };
