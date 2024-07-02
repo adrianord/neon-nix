@@ -41,7 +41,7 @@ in
             typescript
             zx
             vscode-langservers-extracted
-            volar
+            vue-language-server
             svelte-language-server
           ]);
       };
