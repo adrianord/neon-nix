@@ -5,15 +5,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
-  -- { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+ -- { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
-  {
-    "copilot.lua",
-    opts = {
-      filetypes = {
-        yaml = true,
-      },
-    }
-  }
 }
