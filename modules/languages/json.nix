@@ -11,7 +11,7 @@ in
     ({
       home._ = {
         home.packages = with pkgs; [
-          nodePackages.vscode-json-languageserver-bin
+          nodePackages.vscode-langservers-extracted
         ];
       };
     })
