@@ -54,7 +54,6 @@
           datree.enable = true;
           direnv.enable = true;
           discord.enable = true;
-          edge.enable = true;
           firefox.enable = true;
           kubernetes.enable = true;
           neovim.enable = true;
