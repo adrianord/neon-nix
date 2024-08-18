@@ -39,10 +39,10 @@ in
           {
             name = "zsh-activate-py-environment";
             src = pkgs.fetchFromGitHub {
-              owner = "se-jaeger";
+              owner = "adrianord";
               repo = "zsh-activate-py-environment";
-              rev = "60f7d30b927d0d6e37ed8eeba9b788c319e1136e";
-              sha256 = "sha256-kk2WIxUptWMRel3Ca+u5lhaHVU/svO5rF8NOiOfSrXA=";
+              rev = "55cb0dc6651c3c6534552c546d3ced0a1ff6096b";
+              sha256 = "sha256-wC6vJRahshHiXlQ2x63alJ17rCzVyGMtSEHs0vOV4+I=";
             };
           }
         ];
