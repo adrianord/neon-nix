@@ -19,6 +19,8 @@
 
     rust-overlay = { url = "github:oxalica/rust-overlay"; };
     rust-overlay .inputs.nixpkgs.follows = "nixpkgs";
+
+    flox.url = "github:flox/flox/v1.2.3";
   };
 
   outputs = inputs:

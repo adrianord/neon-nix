@@ -15,6 +15,7 @@
     ./discord.nix
     ./edge.nix
     ./firefox.nix
+    ./flox.nix
     ./gcloud.nix
     ./ghostty.nix
     ./git.nix
