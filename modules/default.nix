@@ -19,10 +19,11 @@ let
       ];
     };
   }.${userConf.host.os};
+  system = userConf.host.arch + "-" + userConf.host.os;
 in
 host.system {
-  system = userConf.host.arch + "-" + userConf.host.os;
-  specialArgs = { inherit inputs userConf lib; } // additionalSpecialArgs;
+  system = system;
+  specialArgs = { inherit inputs userConf lib system; } // additionalSpecialArgs;
   modules = host.modules ++
     [
       ./nix.nix

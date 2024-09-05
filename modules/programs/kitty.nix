@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, system, ... }:
 
 with lib;
 let
@@ -30,6 +30,7 @@ in
         };
         programs.kitty = {
           enable = true;
+          package = inputs.nixpkgs-stable.legacyPackages.${system}.kitty;
           font = {
             name = cfg.font;
             size = config.neon.common.font.size;
