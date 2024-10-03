@@ -28,6 +28,7 @@ in
           keybind = super+enter=unbind
 
           macos-titlebar-style = transparent
+          window-save-state = never
         '';
         target = "ghostty/config";
       };
