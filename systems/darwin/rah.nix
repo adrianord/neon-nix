@@ -70,7 +70,7 @@
           signal.enable = true;
           utils.enable = true;
           vivaldi.enable = true;
-          vscode.enable = true;
+          vscode.enable = false;
           zellij.enable = false;
           zsh.enable = true;
         };
@@ -94,8 +94,15 @@
           "1password"
           "moonlight"
           "linear-linear"
+          "cursor"
+          "utm"
         ];
       };
     }
+    ({ pkgs, ... }: {
+      home._.home.packages = with pkgs; [
+        postgresql
+      ];
+    })
   ];
 }

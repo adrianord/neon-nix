@@ -50,7 +50,7 @@ in
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
         servers = [
-          "tsserver"
+          "ts_ls"
           "cssls"
           "html"
           "volar"
