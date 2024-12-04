@@ -14,7 +14,6 @@ in
           protobuf
           grpcurl
           buf
-          buf-language-server
         ];
       };
     })

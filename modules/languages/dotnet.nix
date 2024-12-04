@@ -11,8 +11,8 @@ in
     ({
       home._ = {
         home.packages = with pkgs; [
-          dotnet-sdk_8
-          omnisharp-roslyn
+          dotnet-sdk
+          #omnisharp-roslyn
           jetbrains.rider
         ];
 
