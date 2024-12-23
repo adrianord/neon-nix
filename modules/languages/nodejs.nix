@@ -41,7 +41,6 @@ in
             typescript
             zx
             vscode-langservers-extracted
-            vue-language-server
             svelte-language-server
           ]);
       };
@@ -53,7 +52,6 @@ in
           "ts_ls"
           "cssls"
           "html"
-          "volar"
           "svelte"
         ];
         masonServers = [
@@ -67,7 +65,6 @@ in
           "typescript"
           "html"
           "css"
-          "vue"
           "svelte"
           "astro"
         ];
