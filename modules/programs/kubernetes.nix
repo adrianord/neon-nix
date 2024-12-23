@@ -27,6 +27,8 @@ in
           kustomize
           dive
           kubeconform
+          fluxcd
+          talosctl
         ];
         programs.zsh = {
           plugins = [

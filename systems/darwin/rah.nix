@@ -71,7 +71,7 @@
           utils.enable = true;
           vivaldi.enable = true;
           vscode.enable = false;
-          zellij.enable = false;
+          zellij.enable = true;
           zsh.enable = true;
         };
       };
@@ -85,7 +85,6 @@
           "microsoft-remote-desktop"
           "balenaetcher"
           "nordvpn"
-          "vmware-fusion"
           "raspberry-pi-imager"
           "keepassxc"
           "unetbootin"
@@ -96,6 +95,7 @@
           "linear-linear"
           "cursor"
           "utm"
+          "chromium"
         ];
       };
     }

@@ -12,25 +12,56 @@ in
   };
 
   config = mkIf cfg.enable {
-    home._.xdg.configFile = {
-      ghosttyConfig = {
-        text = ''
-          theme = catppuccin-mocha
-          quit-after-last-window-closed = true
-          font-family = "${config.neon.common.font.default}"
-          font-size = ${toString config.neon.common.font.size}
-          font-feature = -calt
-          font-feature = -liga
-          font-feature = -dlig
+    home._ = {
+      home.sessionPath = [ "/Applications/Ghostty.app/Contents/MacOS" ];
+      xdg.configFile = {
+        ghosttyConfig = {
+          text = ''
+            theme = catppuccin-mocha
+            macos-titlebar-style = hidden
+            window-save-state = never
+            window-padding-y = 0
+            quit-after-last-window-closed = true
+            font-family = "${config.neon.common.font.default}"
+            font-size = ${toString config.neon.common.font.size}
+            font-feature = -calt
+            font-feature = -liga
+            font-feature = -dlig
 
-          keybind = super+physical:one=unbind
-          keybind = super+ctrl+physical:one=unbind
-          keybind = super+enter=unbind
+            keybind = super+physical:one=unbind
+            keybind = super+ctrl+physical:one=unbind
+            keybind = super+enter=unbind
 
-          macos-titlebar-style = transparent
-          window-save-state = never
-        '';
-        target = "ghostty/config";
+            keybind = ctrl+physical:one=unbind
+            keybind = ctrl+physical:two=unbind
+            keybind = ctrl+physical:three=unbind
+            keybind = ctrl+physical:four=unbind
+            keybind = ctrl+physical:five=unbind
+            keybind = ctrl+physical:six=unbind
+            keybind = ctrl+physical:seven=unbind
+            keybind = ctrl+physical:eight=unbind
+            keybind = ctrl+physical:nine=unbind
+            keybind = ctrl+physical:zero=unbind
+
+            keybind = super+physical:one=unbind
+            keybind = super+physical:two=unbind
+            keybind = super+physical:three=unbind
+            keybind = super+physical:four=unbind
+            keybind = super+physical:five=unbind
+            keybind = super+physical:six=unbind
+            keybind = super+physical:seven=unbind
+            keybind = super+physical:eight=unbind
+            keybind = super+physical:nine=unbind
+            keybind = super+physical:zero=unbind
+
+            keybind = super+t=unbind
+            keybind = super+w=unbind
+
+            keybind = ctrl+tab=text:a
+            keybind = ctrl+shift+tab=text:b
+          '';
+          target = "ghostty/config";
+        };
       };
     };
   };
