@@ -12,6 +12,7 @@ ui {
 }
 
 keybinds {
+  unbind "Ctrl o"
   shared_except "locked" {
     bind "Super t" { NewTab; }
     bind "Super w" { CloseTab; }
