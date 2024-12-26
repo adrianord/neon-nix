@@ -52,6 +52,16 @@ in
               keybind = super+physical:eight=unbind
               keybind = super+physical:nine=unbind
               keybind = super+physical:zero=unbind
+
+              keybind = ctrl+t>physical:one=goto_tab:1
+              keybind = ctrl+t>physical:two=goto_tab:2
+              keybind = ctrl+t>physical:three=goto_tab:3
+              keybind = ctrl+t>physical:four=goto_tab:4
+              keybind = ctrl+t>physical:five=goto_tab:5
+              keybind = ctrl+t>physical:six=goto_tab:6
+              keybind = ctrl+t>physical:seven=goto_tab:7
+              keybind = ctrl+t>physical:eight=goto_tab:8
+              keybind = ctrl+t>physical:nine=goto_tab:9
             '';
             target = "ghostty/config";
           };
