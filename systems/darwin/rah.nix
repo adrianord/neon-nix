@@ -71,7 +71,7 @@
           utils.enable = true;
           vivaldi.enable = true;
           vscode.enable = false;
-          zellij.enable = true;
+          zellij.enable = false;
           zsh.enable = true;
         };
       };
