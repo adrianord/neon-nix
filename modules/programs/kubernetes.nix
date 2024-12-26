@@ -29,6 +29,7 @@ in
           kubeconform
           fluxcd
           talosctl
+          etcd
         ];
         programs.zsh = {
           plugins = [
