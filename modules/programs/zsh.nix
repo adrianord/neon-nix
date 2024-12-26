@@ -61,6 +61,7 @@ in
           cdcode = mkDefault "cd ~/Code";
           g = mkDefault "git";
           rmf = mkDefault "rm -rf";
+          ssh = mkDefault "TERM=xterm-256color ssh";
         };
         completionInit = ''
           autoload -Uz compinit
