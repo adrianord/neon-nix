@@ -35,7 +35,7 @@ in
             name = cfg.font;
             size = config.neon.common.font.size;
           };
-          theme = "Catppuccin-Mocha";
+          themeFile = "Catppuccin-Mocha";
           settings = {
             clear_all_shortcuts = "yes";
             scrollback_lines = 10000;
