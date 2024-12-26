@@ -12,7 +12,7 @@ in
       home._ = {
         home.packages = with pkgs; [
           dotnet-sdk
-          #omnisharp-roslyn
+          omnisharp-roslyn
           jetbrains.rider
         ];
 
