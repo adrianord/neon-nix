@@ -28,7 +28,7 @@ in
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "bufls" ];
+        servers = [ "buf_ls" ];
         tsLanguages = [ "proto" ];
       };
     })
