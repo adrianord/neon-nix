@@ -71,7 +71,7 @@ in
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
       homebrew = {
-        casks = [ "ghostty" ];
+        casks = [ "ghostty@tip" ];
       };
     })
   ]);
