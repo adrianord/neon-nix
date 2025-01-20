@@ -5,6 +5,7 @@ let
     { path = "lua-language-server"; source = "stable"; }
     { path = "ansible"; source = "stable"; }
     { path = "awscli2"; source = "stable"; }
+    { path = "ruff"; source = "stable"; }
 
     { path = "nodePackages.cdktf-cli"; source = "disable"; }
     { path = "nodePackages_latest.cdktf-cli"; source = "disable"; }
