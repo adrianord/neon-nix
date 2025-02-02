@@ -66,6 +66,9 @@
 
     {
       homebrew = {
+        taps = [
+          "grishka/grishka"
+        ];
         casks = [
           "zoom"
           "obsidian"
@@ -74,6 +77,7 @@
           "cursor"
           "utm"
           "chromium"
+          "neardrop"
         ];
       };
     }
