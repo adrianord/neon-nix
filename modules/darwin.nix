@@ -75,5 +75,22 @@ in
       system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
       system.defaults.NSGlobalDomain.KeyRepeat = 2;
     })
+
+    (mkIf config.neon.programs.zsh.enable {
+      homebrew.brews = [
+        "zsh-completions"
+      ];
+      home._.programs.zsh = {
+        initExtraBeforeCompInit = ''
+          if type brew &>/dev/null; then
+            eval "$(brew shellenv)"
+            FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+            autoload -Uz compinit
+            compinit
+          fi
+        '';
+      };
+    })
   ]);
 }
