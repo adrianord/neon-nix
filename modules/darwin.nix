@@ -17,7 +17,6 @@ in
 
   config = mkIf pkgs.stdenv.hostPlatform.isDarwin (mkMerge [
     ({
-      services.nix-daemon.enable = true;
       programs.nix-index.enable = true;
       system.stateVersion = 4;
       documentation.enable = false;
