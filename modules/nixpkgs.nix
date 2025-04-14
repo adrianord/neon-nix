@@ -6,6 +6,8 @@ let
     { path = "ansible"; source = "stable"; }
     { path = "awscli2"; source = "stable"; }
     { path = "ruff"; source = "stable"; }
+    { path = "etcd"; source = "stable"; }
+    { path = "emacs"; source = "stable"; }
 
     { path = "nodePackages.cdktf-cli"; source = "disable"; }
     { path = "nodePackages_latest.cdktf-cli"; source = "disable"; }

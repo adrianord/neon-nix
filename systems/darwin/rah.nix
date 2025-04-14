@@ -11,7 +11,7 @@
 
   modules = [
     ({ lib, ... }: {
-      home._.programs.emacs.enable = true;
+      home._.programs.emacs.enable = false;
       neon = {
         common =
           {
@@ -77,7 +77,20 @@
           "cursor"
           "utm"
           "chromium"
+          "google-chrome"
           "neardrop"
+          "audacity"
+          "elmedia-player"
+          "balenaetcher"
+          "unity-hub"
+          "blender"
+        ];
+        brews = [
+          "hyperfine"
+          "p7zip"
+          "ffmpeg"
+          "yt-dlp"
+          "yamlfmt"
         ];
       };
     }
