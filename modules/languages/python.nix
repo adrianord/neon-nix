@@ -25,8 +25,9 @@ in
 
     (mkIf cfg.neovim.enable {
       neon.programs.neovim.lsp = mkIf cfg.neovim.enable {
-        servers = [ "pyright" "ruff" ];
+        servers = [ "ruff" ];
         tsLanguages = [ "python" ];
+        masonServers = [ "pyright" ];
       };
     })
 

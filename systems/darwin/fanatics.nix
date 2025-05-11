@@ -11,7 +11,7 @@
 
   modules = [
     ({ lib, ... }: {
-      home._.programs.emacs.enable = true;
+      home._.programs.emacs.enable = false;
       neon = {
         common =
           {
@@ -29,7 +29,6 @@
           "nix"
           "nodejs"
           "python"
-          "rust"
           "terraform"
           "tilt"
           "yaml"
@@ -74,22 +73,40 @@
         casks = [
           "obsidian"
           "intellij-idea"
-          "dbeaver-community"
           "bitwarden"
-          "datagrip"
           "nordvpn"
+          "tableplus"
+          "pgadmin4"
+          "cursor"
         ];
         brews = [
           "fanatics-gaming/homebrew-tap/fbg-platform-tools"
           "aws-sso-util"
           "fluxcd/tap/flux@0.41"
-          "postgresql@15"
-          {
-            name = "libpq";
-            link = true;
-          }
+          "bear"
+          "rust"
+          "openjdk"
+          "poetry"
         ];
       };
+    }
+
+    {
+      homebrew = {
+        brews = [
+          "postgresql@16"
+        ];
+      };
+      home._.home.sessionPath = [ "/opt/homebrew/opt/postgresql@16/bin" ];
+    }
+
+    {
+      homebrew = {
+        brews = [
+          "ruby"
+        ];
+      };
+      home._.home.sessionPath = [ "/opt/homebrew/opt/ruby/bin" ];
     }
   ];
 }
