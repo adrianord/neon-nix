@@ -6,5 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  --{ import = "astrocommunity.debugging.nvim-dap-virtual-text"}
+  { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
 }
