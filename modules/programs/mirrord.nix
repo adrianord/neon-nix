@@ -28,7 +28,7 @@ in
     ({
       home._ =
         {
-          programs.zsh.initExtra = ''
+          programs.zsh.initContent = ''
             source <(mirrord completions zsh)
           '';
         };

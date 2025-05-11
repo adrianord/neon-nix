@@ -43,7 +43,7 @@ in
 
     (mkIf cfg.zsh.enable {
       home._.programs.zsh = {
-        initExtra = ''
+        initContent = ''
           complete -o nospace -C terraform terraform
         '';
       };

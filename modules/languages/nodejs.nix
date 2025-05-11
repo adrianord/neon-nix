@@ -108,7 +108,7 @@ in
 
     (mkIf cfg.zsh.enable {
       home._.programs.zsh = {
-        initExtra = ''
+        initContent = ''
           ###-begin-pnpm-completion-###
           if type compdef &>/dev/null; then
             _pnpm_completion () {

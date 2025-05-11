@@ -80,7 +80,7 @@ in
         "zsh-completions"
       ];
       home._.programs.zsh = {
-        initExtraBeforeCompInit = ''
+        initContent = lib.mkOrder 550 ''
           if type brew &>/dev/null; then
             eval "$(brew shellenv)"
             FPATH=$(brew --prefix)/share/zsh-completions:$FPATH

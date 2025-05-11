@@ -19,7 +19,7 @@ in
       ];
       programs.zsh = {
 
-        initExtra = ''
+        initContent = ''
           complete -C 'aws_completer' aws
         '';
       };

@@ -49,7 +49,7 @@ in
 
     (mkIf cfg.zsh.enable {
       home._.programs.zsh = mkIf cfg.zsh.enable {
-        initExtra = ''
+        initContent = ''
           _dotnet_zsh_complete()
           {
             #compdef dotnet

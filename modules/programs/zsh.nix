@@ -82,7 +82,7 @@ in
             };
           }
         ];
-        initExtra = ''
+        initContent = ''
           bindkey '^F' fzf-cd-widget
           bindkey '^Y' fzf-file-widget
           bindkey "^[[1;5C" forward-word

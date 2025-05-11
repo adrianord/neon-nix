@@ -37,7 +37,7 @@ in
 
     (mkIf cfg.zsh.enable {
       home._.programs.zsh = mkIf cfg.zsh.enable {
-        initExtraBeforeCompInit = ''
+        initContent = lib.mkOrder 550 ''
           if [[ -n $ZELLIJ ]]; then
             (set +m; zellij action rename-tab "" &)
           fi
