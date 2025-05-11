@@ -55,10 +55,10 @@ in
           "svelte"
         ];
         masonServers = [
-          "eslint"
-          "tailwindcss"
-          "emmet_language_server"
-          "astro"
+          "eslint-lsp"
+          "tailwindcss-language-server"
+          "emmet-language-server"
+          "astro-language-server"
         ];
         tsLanguages = [
           "javascript"

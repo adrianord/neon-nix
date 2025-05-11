@@ -66,9 +66,9 @@ in
         }
       '';
 
-      "${nvimDir}/lua/plugins/mason-lspconfig-extended.lua".text = ''
+      "${nvimDir}/lua/plugins/mason-tool-installer-extended.lua".text = ''
         return {
-          "williamboman/mason-lspconfig.nvim",
+          "WhoIsSethDaniel/mason-tool-installer.nvim",
           opts = {
             ensure_installed = { ${concattedMasonServers} }
           }

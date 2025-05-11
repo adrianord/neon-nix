@@ -5,8 +5,6 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
- -- { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
 }

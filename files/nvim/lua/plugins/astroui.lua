@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   {
     "catppuccin/nvim",
@@ -35,5 +34,5 @@ return {
         LSPLoading10 = "⠏",
       },
     },
-  },
+  }
 }
