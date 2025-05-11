@@ -12,6 +12,7 @@ in
       home._ = {
         home.packages = with pkgs; [
           poetry
+          uv
           ruff
           pyright
           (python3.withPackages
