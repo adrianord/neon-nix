@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, pkgs-stable, ... }:
 let
   pkgOverride = [
     { path = "ghostscript"; source = "stable"; }
@@ -25,10 +25,13 @@ let
     };
 
   mkPackage = config: prev:
+    let
+      pathList = lib.splitString "." config.path;
+    in
     if config.source == "disable" then
       mkDisabledPackage config.path prev
     else if config.source == "stable" then
-      inputs.nixpkgs-stable.legacyPackages.${prev.system}.${config.path}
+      lib.getAttrFromPath pathList pkgs-stable
     else
       throw "Unknown source ${config.source} for package ${config.path}";
 
@@ -67,6 +70,7 @@ in
     (import ../overlays/vscodeInsiders.nix inputs.vscodeInsiders)
     (import ../overlays/nur.nix inputs.nur)
     (import ../overlays/vscodeExtensions.nix)
+
     (final: prev:
       let
         # Group packages by their namespace
