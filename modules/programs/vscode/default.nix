@@ -20,11 +20,13 @@ in
       vscode = {
         enable = true;
         package = pkgs.vscode;
-        extensions = with pkgs; [
-          vscode-extensions.asvetliakov.vscode-neovim
-        ];
-        userSettings = {
-          vscode-neovim.neovimExecutablePaths.darwin = "nvim";
+        profiles.default = {
+          extensions = with pkgs; [
+            vscode-extensions.asvetliakov.vscode-neovim
+          ];
+          userSettings = {
+            vscode-neovim.neovimExecutablePaths.darwin = "nvim";
+          };
         };
       };
       zsh = {

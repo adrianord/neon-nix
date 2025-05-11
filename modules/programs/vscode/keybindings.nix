@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  home._.programs.vscode.keybindings = [
+  home._.programs.vscode.profiles.default.keybindings = [
     {
       key = "ctrl+k d";
       command = "editor.action.formatDocument";

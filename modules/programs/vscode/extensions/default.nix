@@ -5,7 +5,7 @@
     ./errorlens.nix
   ];
 
-  home._.programs.vscode = {
+  home._.programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-extensions; [
       catppuccin.catppuccin-vsc
       streetsidesoftware.code-spell-checker

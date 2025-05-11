@@ -5,7 +5,7 @@ let
   fontSize = config.neon.common.font.size;
 in
 {
-  home._.programs.vscode.userSettings = {
+  home._.programs.vscode.profiles.default.userSettings = {
     editor = {
       inherit fontFamily fontSize;
       renderWhitespace = "all";

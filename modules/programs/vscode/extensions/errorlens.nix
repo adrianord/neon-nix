@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home._.programs.vscode = {
+  home._.programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-extensions; [
       usernamehw.errorlens
     ];
