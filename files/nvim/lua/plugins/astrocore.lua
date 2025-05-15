@@ -1,8 +1,8 @@
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 
-local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" };
-local toggleExplorer = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" };
+local lspCodeAction = { function() vim.lsp.buf.code_action() end, desc = "LSP code action" }
+local toggleExplorer = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }
 
 ---@type LazySpec
 return {
@@ -16,12 +16,12 @@ return {
       },
     },
     features = {
-      large_buf = { size = 1024 * 256, lines = 10000 },             -- set global limits for large files for disabling features like treesitter
-      autopairs = true,                                             -- enable autopairs at start
-      cmp = true,                                                   -- enable completion at start
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      autopairs = true, -- enable autopairs at start
+      cmp = true, -- enable completion at start
       diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
-      highlighturl = true,                                          -- highlight URLs at start
-      notifications = true,                                         -- enable notifications at start
+      highlighturl = true, -- highlight URLs at start
+      notifications = true, -- enable notifications at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
@@ -43,14 +43,14 @@ return {
     },
     -- vim options can be configured here
     options = {
-      opt = {                  -- vim.opt.<key>
+      opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
-        number = true,         -- sets vim.opt.number
-        spell = true,          -- sets vim.opt.spell
-        signcolumn = "yes",    -- sets vim.opt.signcolumn to yes
-        wrap = false,          -- sets vim.opt.wrap
+        number = true, -- sets vim.opt.number
+        spell = false, -- sets vim.opt.spell
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        wrap = false, -- sets vim.opt.wrap
         autoindent = true,
-        winborder = "rounded"
+        winborder = "rounded",
       },
       g = { -- vim.g.<key>
         autoformat_enabled = true,
@@ -87,12 +87,10 @@ return {
               require("alpha").start(true)
               if require("astrocore").is_available "resession.nvim" then
                 local current = require("resession").get_current_session_info()
-                if current then
-                  require("resession").delete(current.name, { dir = current.dir })
-                end
+                if current then require("resession").delete(current.name, { dir = current.dir }) end
               end
             end
-          end
+          end,
         },
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
@@ -111,8 +109,7 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },
-      i = {
-      },
+      i = {},
       t = {
         ["<C-l>"] = false,
         ["<C-j>"] = false,
@@ -132,14 +129,11 @@ return {
             -- Only load the session if nvim was started with no args
             if vim.fn.argc(-1) == 0 then
               -- try to load a directory session using the current working directory
-              require("resession").load(
-                vim.fn.getcwd(),
-                { dir = "dirsession", silence_errors = true }
-              )
+              require("resession").load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
             end
           end,
         },
-      }
-    }
+      },
+    },
   },
 }
