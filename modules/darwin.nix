@@ -19,6 +19,7 @@ in
     ({
       programs.nix-index.enable = true;
       system.stateVersion = 4;
+      system.primaryUser = userConf.user.name;
       documentation.enable = false;
 
       homebrew = {
