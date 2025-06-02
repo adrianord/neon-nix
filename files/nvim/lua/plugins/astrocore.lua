@@ -83,8 +83,8 @@ return {
           function()
             local bufs = vim.fn.getbufinfo { buflisted = 1 }
             require("astrocore.buffer").close()
-            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then
-              require("alpha").start(true)
+            if require("astrocore").is_available "snacks.nvim" and not bufs[2] then
+              require("snacks").dashboard()
               if require("astrocore").is_available "resession.nvim" then
                 local current = require("resession").get_current_session_info()
                 if current then require("resession").delete(current.name, { dir = current.dir }) end
