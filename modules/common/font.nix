@@ -39,7 +39,6 @@ in
 
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
       homebrew = {
-        taps = [ "homebrew/cask-fonts" ];
         casks = cfg.casks;
       };
     })
