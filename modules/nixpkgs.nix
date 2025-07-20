@@ -8,8 +8,12 @@ let
     { path = "ruff"; source = "stable"; }
     { path = "etcd"; source = "stable"; }
     { path = "emacs"; source = "stable"; }
+    { path = "bash-language-server"; source = "stable"; }
 
-    { path = "nodePackages.cdktf-cli"; source = "disable"; }
+    {
+      path = "nodePackages.cdktf-cli";
+      source = "disable";
+    }
     { path = "nodePackages_latest.cdktf-cli"; source = "disable"; }
   ];
 

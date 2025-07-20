@@ -84,6 +84,8 @@
           "balenaetcher"
           "unity-hub"
           "blender"
+          "vnc-viewer"
+          "folx"
         ];
         brews = [
           "hyperfine"
