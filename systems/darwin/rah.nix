@@ -59,6 +59,7 @@
           signal.enable = true;
           utils.enable = true;
           vivaldi.enable = true;
+          zen.enable = true;
           zsh.enable = true;
         };
       };

@@ -35,7 +35,6 @@ in
     })
     (mkIf pkgs.stdenv.hostPlatform.isDarwin {
       homebrew.casks = mkIf pkgs.stdenv.hostPlatform.isDarwin [
-        "neovide-app"
       ];
     })
   ]);

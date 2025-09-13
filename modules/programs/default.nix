@@ -30,6 +30,7 @@
     ./vivaldi.nix
     ./vscode
     ./zellij.nix
+    ./zen.nix
     ./zsh.nix
   ];
 }
