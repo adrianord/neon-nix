@@ -5,6 +5,7 @@
     ./bash.nix
     ./dotnet.nix
     ./go.nix
+    ./java.nix
     ./json.nix
     ./just.nix
     ./latex.nix

@@ -9,5 +9,6 @@ return {
   --{ import = "astrocommunity.debugging.nvim-dap-virtual-text"}
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.git.octo-nvim" },
+  { import = "astrocommunity.pack.java" },
   -- import/override with your plugins folder
 }

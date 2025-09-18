@@ -24,6 +24,7 @@
           "bash"
           "dotnet"
           "go"
+          "java"
           "just"
           "latex"
           "lua"
