@@ -17,7 +17,7 @@ in
         xdg.configFile = {
           ghosttyConfig = {
             text = ''
-              theme = catppuccin-mocha
+              theme = Catppuccin Mocha
               window-save-state = never
               window-padding-y = 0
               quit-after-last-window-closed = true
@@ -42,16 +42,16 @@ in
               keybind = ctrl+physical:nine=unbind
               keybind = ctrl+physical:zero=unbind
 
-              keybind = super+physical:one=unbind
-              keybind = super+physical:two=unbind
-              keybind = super+physical:three=unbind
-              keybind = super+physical:four=unbind
-              keybind = super+physical:five=unbind
-              keybind = super+physical:six=unbind
-              keybind = super+physical:seven=unbind
-              keybind = super+physical:eight=unbind
-              keybind = super+physical:nine=unbind
-              keybind = super+physical:zero=unbind
+              keybind = super+1=unbind
+              keybind = super+2=unbind
+              keybind = super+3=unbind
+              keybind = super+4=unbind
+              keybind = super+5=unbind
+              keybind = super+6=unbind
+              keybind = super+7=unbind
+              keybind = super+8=unbind
+              keybind = super+9=unbind
+              keybind = super+0=unbind
 
               keybind = ctrl+t>physical:one=goto_tab:1
               keybind = ctrl+t>physical:two=goto_tab:2
