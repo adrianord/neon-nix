@@ -11,6 +11,7 @@
     ./dagger.nix
     ./datagrip.nix
     ./datree.nix
+    ./devbox.nix
     ./direnv.nix
     ./discord.nix
     ./edge.nix
