@@ -46,6 +46,7 @@
           aws.enable = true;
           kitty.enable = true;
           direnv.enable = true;
+          devbox.enable = true;
           kubernetes.enable = true;
           neovim.enable = true;
           pulumi.enable = true;

@@ -27,9 +27,13 @@ in
               font-feature = -liga
               font-feature = -dlig
 
+              desktop-notifications = true
+
               keybind = super+physical:one=unbind
               keybind = super+ctrl+physical:one=unbind
               keybind = super+enter=unbind
+
+              keybind = shift+enter=text:\n
 
               keybind = ctrl+physical:one=unbind
               keybind = ctrl+physical:two=unbind

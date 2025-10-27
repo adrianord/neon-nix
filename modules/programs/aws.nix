@@ -17,8 +17,10 @@ in
         awscli2
         aws-vault
       ];
+      home.sessionVariables = {
+        AWS_VAULT_BIOMETRICS = "true";
+      };
       programs.zsh = {
-
         initContent = ''
           complete -C 'aws_completer' aws
         '';

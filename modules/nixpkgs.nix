@@ -4,7 +4,6 @@ let
     { path = "ghostscript"; source = "stable"; }
     { path = "lua-language-server"; source = "stable"; }
     { path = "ansible"; source = "stable"; }
-    { path = "awscli2"; source = "stable"; }
     { path = "ruff"; source = "stable"; }
     { path = "etcd"; source = "stable"; }
     { path = "emacs"; source = "stable"; }
