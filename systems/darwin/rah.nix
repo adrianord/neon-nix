@@ -49,6 +49,7 @@
           aws.enable = true;
           coreutilsRs.enable = true;
           coreutilsRs.zshIntegration = true;
+          devbox.enable = true;
           direnv.enable = true;
           discord.enable = true;
           ghostty.enable = true;

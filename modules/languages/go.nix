@@ -23,7 +23,9 @@ in
           go = {
             enable = true;
             package = pkgs.go;
-            inherit goPath goBin;
+            env = {
+              inherit goPath goBin;
+            };
           };
         };
       };

@@ -20,7 +20,7 @@ in
             eza
             bat
             ripgrep
-            du-dust
+            dust
             fd
           ];
         };

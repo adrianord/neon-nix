@@ -55,53 +55,58 @@ in
         gh
         act
       ];
-      programs.git = {
-        enable = true;
-        lfs.enable = true;
-        userName = userConf.user.fullname;
-        userEmail = userConf.user.email;
-        aliases = {
-          a = "add";
-          b = "branch";
-          c = "commit";
-          d = "diff";
-          l = "log";
-          m = "merge";
-          r = "rebase";
-          s = "status";
-          co = "checkout";
-          dt = "difftool";
-          ps = "push";
-          psf = "push --force-with-lease";
-          pl = "pull";
-          lol = "log --oneline";
-          amend = "commit --no-edit --amend";
-          cl = "clone";
-          pushf = "push --force-with-lease";
-          cloneb = "clone --no-checkout --config core.bare=true";
-          wt = "worktree";
-          wtl = "worktree list";
-          wta = "worktree add";
-          wtr = "worktree remove";
-          wtp = "worktree prune";
-          wtc = "worktree add $1 $1";
-        };
-        extraConfig = {
-          pull = {
-            rebase = true;
-          };
-          push = {
-            autoSetupRemote = true;
-          };
-          init = {
-            defaultBranch = "main";
-          };
-          worktree = {
-            guessRemote = true;
+      programs = {
+        git = {
+          enable = true;
+          lfs.enable = true;
+          settings = {
+            user = {
+              name = userConf.user.fullname;
+              email = userConf.user.email;
+            };
+            aliases = {
+              a = "add";
+              b = "branch";
+              c = "commit";
+              d = "diff";
+              l = "log";
+              m = "merge";
+              r = "rebase";
+              s = "status";
+              co = "checkout";
+              dt = "difftool";
+              ps = "push";
+              psf = "push --force-with-lease";
+              pl = "pull";
+              lol = "log --oneline";
+              amend = "commit --no-edit --amend";
+              cl = "clone";
+              pushf = "push --force-with-lease";
+              cloneb = "clone --no-checkout --config core.bare=true";
+              wt = "worktree";
+              wtl = "worktree list";
+              wta = "worktree add";
+              wtr = "worktree remove";
+              wtp = "worktree prune";
+              wtc = "worktree add $1 $1";
+            };
+            pull = {
+              rebase = true;
+            };
+            push = {
+              autoSetupRemote = true;
+            };
+            init = {
+              defaultBranch = "main";
+            };
+            worktree = {
+              guessRemote = true;
+            };
           };
         };
         delta = {
           enable = true;
+          enableGitIntegration = true;
           options = {
             features = "side-by-side line-numbers decorations";
             whitespace-error-style = "22 reverse";

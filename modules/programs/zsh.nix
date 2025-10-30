@@ -47,7 +47,7 @@ in
         syntaxHighlighting.enable = true;
         autosuggestion.enable = true;
         enableCompletion = true;
-        dotDir = ".config/zsh";
+        dotDir = "${config.home.config.xdg.configHome}/zsh";
         history = {
           extended = true;
           ignorePatterns = [
