@@ -64,7 +64,7 @@ in
               name = userConf.user.fullname;
               email = userConf.user.email;
             };
-            aliases = {
+            alias = {
               a = "add";
               b = "branch";
               c = "commit";
