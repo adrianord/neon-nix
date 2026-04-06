@@ -36,15 +36,6 @@ in
 
       home._ = { config, pkgs, ... }: {
         home.sessionPath = mkIf (userConf.host.arch == "aarch64") [ "/opt/homebrew/bin" ];
-        home.file."Applications/Home Manager Apps".source =
-          let
-            apps = pkgs.buildEnv {
-              name = "home-manager-applications";
-              paths = config.home.packages;
-              pathsToLink = "/Applications";
-            };
-          in
-          "${apps}/Applications";
       };
       users.users.${userConf.user.name} = {
         name = userConf.user.name;
