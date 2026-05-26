@@ -55,6 +55,13 @@ in
         gh
         act
       ];
+      programs.zsh.initContent = ''
+        if command -v gh &>/dev/null; then
+          _gh_token=$(gh auth token 2>/dev/null)
+          [ -n "$_gh_token" ] && export GITHUB_TOKEN="$_gh_token"
+          unset _gh_token
+        fi
+      '';
       programs = {
         git = {
           enable = true;
