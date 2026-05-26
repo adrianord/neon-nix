@@ -10,8 +10,11 @@
   };
 
   modules = [
-    ({ lib, ... }: {
+    ({ lib, pkgs, ... }: {
       home._.programs.emacs.enable = false;
+      home._.home.packages = with pkgs; [
+        devcontainer
+      ];
       neon = {
         common =
           {
@@ -73,12 +76,13 @@
         ];
         casks = [
           "obsidian"
-          "intellij-idea"
           "bitwarden"
-          "nordvpn"
           "tableplus"
           "pgadmin4"
           "cursor"
+          "block-goose"
+          "db-browser-for-sqlite"
+          "visual-studio-code"
         ];
         brews = [
           "fanatics-gaming/homebrew-tap/fbg-platform-tools"
@@ -88,6 +92,7 @@
           "rust"
           "openjdk"
           "poetry"
+          "block-goose-cli"
         ];
       };
     }
