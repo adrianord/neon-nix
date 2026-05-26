@@ -38,7 +38,6 @@ in
             pnpm
             typescript-language-server
             typescript
-            zx
             vscode-langservers-extracted
             svelte-language-server
           ];
