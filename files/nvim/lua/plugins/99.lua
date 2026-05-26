@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "ThePrimeagen/99",
   config = function()
@@ -9,15 +10,27 @@ return {
     local cwd = vim.uv.cwd()
     local basename = vim.fs.basename(cwd)
     _99.setup {
-      provider = _99.ClaudeCodeProvider,
+      provider = _99.Providers.ClaudeCodeProvider, -- default: OpenCodeProvider
       logger = {
         level = _99.DEBUG,
         path = "/tmp/" .. basename .. ".99.debug",
         print_on_error = true,
       },
+      -- When setting this to something that is not inside the CWD tools
+      -- such as claude code or opencode will have permission issues
+      -- and generation will fail refer to tool documentation to resolve
+      -- https://opencode.ai/docs/permissions/#external-directories
+      -- https://code.claude.com/docs/en/permissions#read-and-edit
+      tmp_dir = "./tmp",
 
       --- Completions: #rules and @files in the prompt buffer
       completion = {
+        -- I am going to disable these until i understand the
+        -- problem better.  Inside of cursor rules there is also
+        -- application rules, which means i need to apply these
+        -- differently
+        -- cursor_rules = "<custom path to cursor rules>"
+
         --- A list of folders where you have your own SKILL.md
         --- Expected format:
         --- /path/to/dir/<skill_name>/SKILL.md
@@ -73,5 +86,15 @@ return {
 
     --- if you have a request you dont want to make any changes, just cancel it
     vim.keymap.set("v", "<leader>9s", function() _99.stop_all_requests() end)
+    vim.keymap.set("n", "<leader>9x", function() _99.stop_all_requests() end)
+
+    vim.keymap.set("n", "<leader>9s", function() _99.search() end)
+
+    vim.keymap.set("v", "<leader>9vv", function() _99.visual() end)
+    vim.keymap.set("v", "<leader>9vp", function() _99.visual_prompt() end)
+    vim.keymap.set("n", "<leader>9i", function() _99.info() end)
+    vim.keymap.set("n", "<leader>9l", function() _99.view_logs() end)
+    vim.keymap.set("n", "<leader>9n", function() _99.next_request_logs() end)
+    vim.keymap.set("n", "<leader>9p", function() _99.prev_request_logs() end)
   end,
 }
