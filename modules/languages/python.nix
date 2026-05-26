@@ -42,8 +42,8 @@ in
             src = pkgs.fetchFromGitHub {
               owner = "adrianord";
               repo = "zsh-activate-py-environment";
-              rev = "a3feb11e5b9c634c610073d4bd17d77a6b3a3224";
-              sha256 = "sha256-APUHmeulNHPe+SbLcb+1ZD5bMGVqMvl13lvu5byQZFg=";
+              rev = "06e47a93573b8094c3d204b56b52eb85d03d4363";
+              sha256 = "sha256-Kif/40fhdSLAv3U7yMdgzZ09arFDfqVSGmweNcAZdII=";
             };
           }
         ];
