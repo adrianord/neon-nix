@@ -20,7 +20,6 @@ in
       packages = with pkgs; [
         pulumi-bin
         pulumictl
-        tf2pulumi
       ];
     };
   };

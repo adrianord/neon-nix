@@ -79,7 +79,6 @@
           "slack"
           "cursor"
           "utm"
-          "chromium"
           "google-chrome"
           "neardrop"
           "audacity"

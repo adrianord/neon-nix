@@ -14,9 +14,7 @@ in
           terraform
           terraform-ls
           tflint
-        ] ++ (with pkgs.nodePackages; [
-          cdktf-cli
-        ]);
+        ];
         home.file.terraformrc = {
           text = ''
             plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"

@@ -23,7 +23,7 @@ in
           kind
           eksctl
           krew
-          nodePackages.cdk8s-cli
+          cdk8s-cli
           kustomize
           dive
           kubeconform

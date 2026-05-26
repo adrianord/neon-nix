@@ -34,7 +34,6 @@ in
             jq
             yarn
             bun
-          ] ++ (with pkgs.nodePackages; [
             js-beautify
             pnpm
             typescript-language-server
@@ -42,7 +41,7 @@ in
             zx
             vscode-langservers-extracted
             svelte-language-server
-          ]);
+          ];
       };
     })
 

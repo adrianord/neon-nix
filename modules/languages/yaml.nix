@@ -13,7 +13,7 @@ in
         home.packages = with pkgs; [
           yq-go
           yamllint
-          nodePackages.yaml-language-server
+          yaml-language-server
         ];
       };
     })

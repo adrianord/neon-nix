@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     home._ = {
       home.packages = with pkgs; [
-        nodePackages.wrangler
+        wrangler
         worker-build
       ];
     };

@@ -13,7 +13,7 @@ in
         home.packages = with pkgs; [
           texlab
           tectonic
-          perl538Packages.LatexIndent
+          perl5Packages.LatexIndent
           zathura
         ];
       };
