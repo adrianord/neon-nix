@@ -60,8 +60,8 @@ in
       "${nvimDir}/lua/plugins/treesitter-extended.lua".text = ''
         return {
           "AstroNvim/astrocore",
-          treesitter = {
-            opts = {
+          opts = {
+            treesitter = {
               ensure_installed = { ${concattedTs} }
             }
           }
